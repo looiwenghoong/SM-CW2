@@ -1,4 +1,4 @@
-package com.neet.MapViewer;
+package com.neet.MapViewer.View;
 
 public class MainController {
 }
