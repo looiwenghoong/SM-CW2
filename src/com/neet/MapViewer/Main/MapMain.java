@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 
 import javax.swing.border.Border;
@@ -12,6 +13,7 @@ public class MapMain extends Application {
 
     public static Stage primaryStage;
     public BorderPane rootLayout;
+    public TilePane mapLayout;
 
     public static void main(String[] args) {
         launch(args);
@@ -22,8 +24,10 @@ public class MapMain extends Application {
         MapMain.primaryStage = primaryStage;
         MapMain.primaryStage.setTitle("Map Viewer");
         initRootView();
+        initMapLayout();
     }
 
+//    Function to init the root view
     public void initRootView()
     {
         try
@@ -42,6 +46,24 @@ public class MapMain extends Application {
         {
             e.printStackTrace();
         }
+    }
 
+//    Function to init the map view
+    public void initMapLayout()
+    {
+        try
+        {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MapMain.class.getResource("/com/neet/MapViewer/View/MapLayout.fxml"));
+
+            mapLayout = (TilePane)loader.load();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        rootLayout.setCenter(mapLayout);
+        mapLayout.setStyle("-fx-background-color: #000000");
     }
 }
