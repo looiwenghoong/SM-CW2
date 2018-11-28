@@ -27,6 +27,7 @@ public class MapMain extends Application {
         initMapLayout();
     }
 
+//    Function to init the root view
     public void initRootView()
     {
         try
@@ -47,6 +48,7 @@ public class MapMain extends Application {
         }
     }
 
+//    Function to init the map view
     public void initMapLayout()
     {
         try
