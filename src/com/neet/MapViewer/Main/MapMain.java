@@ -52,9 +52,13 @@ public class MapMain extends Application {
         }
     }
 
-//    Function to init the map view
+//    Function to show the map
     public void initMapLayout()
     {
+        TileMapViewer mapViewer = new TileMapViewer();
+        mapViewer.loadMap("/Maps/testmap.map");
+        mapViewer.loadImages("/Tilesets/testtileset.gif");
+        mapViewer.initMapCanvas();
         try
         {
             FXMLLoader loader = new FXMLLoader();
@@ -67,8 +71,11 @@ public class MapMain extends Application {
             e.printStackTrace();
         }
 
+        // Set the number of columns and rows for the tilepane map layout
+        mapLayout.setPrefColumns(mapViewer.numCols);
+        mapLayout.setPrefRows(mapViewer.numRows);
+        mapLayout.getChildren().add(mapViewer.mainCanvas);
         rootLayout.setCenter(mapLayout);
-        mapLayout.setStyle("-fx-background-color: #000000");
     }
 
     public void fadeAnimation()
