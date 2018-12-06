@@ -64,6 +64,6 @@ public class MapMain extends Application {
         }
 
         rootLayout.setCenter(mapLayout);
-        mapLayout.setStyle("-fx-background-color: #000000");
+//        mapLayout.setStyle("-fx-background-color: #000000");
     }
 }
