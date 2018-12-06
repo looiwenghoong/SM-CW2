@@ -82,7 +82,6 @@ public class TileMapViewer {
                 }
 
                 int rowCol = mapMatrix[row][col];
-                System.out.println(rowCol);
                 int R = rowCol / numTilesAcross;
                 int C = rowCol % numTilesAcross;
 
