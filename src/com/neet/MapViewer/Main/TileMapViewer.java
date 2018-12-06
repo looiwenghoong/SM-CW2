@@ -11,6 +11,8 @@ import javafx.scene.canvas.Canvas;
 
 public class TileMapViewer {
 
+    public Cursor cursor;
+
     public int numCols;
     public int numRows;
 
@@ -57,8 +59,6 @@ public class TileMapViewer {
         {
             tileset = new Image(TileMapViewer.class.getResourceAsStream(tilesImage));
             numTilesAcross = (int)tileset.getWidth() / tileSize;
-
-            System.out.println(numTilesAcross);
         }
         catch(Exception e)
         {
@@ -70,6 +70,7 @@ public class TileMapViewer {
     {
         mainCanvas = new Canvas(640, 640);
         tileType = new int[numRows][numCols];
+        cursor = new Cursor();
 
         for(int row = 0; row < numRows; row++)
         {
@@ -102,5 +103,14 @@ public class TileMapViewer {
             }
         }
 
+        drawCursor();
+    }
+
+    public void drawCursor()
+    {
+        mainCanvas.getGraphicsContext2D().drawImage(
+                cursor.imageArray[cursor.currentCursor], 0, 0, tileSize, tileSize,
+                cursor.initCursorCol * tileSize,
+                cursor.initCursorRow * tileSize, tileSize, tileSize);
     }
 }
