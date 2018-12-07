@@ -3,13 +3,14 @@ package com.neet.MapViewer.Main;
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.scene.control.Button;
 
-import javax.swing.border.Border;
 
 public class MapMain extends Application {
 
@@ -44,7 +45,7 @@ public class MapMain extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
 
-            fadeAnimation();
+//            fadeAnimation();
         }
         catch (Exception e)
         {
