@@ -1,9 +1,8 @@
 package com.neet.MapViewer.Main;
+import com.neet.DiamondHunter.TileMap.TileMap;
 
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
-import java.awt.*;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -12,6 +11,7 @@ import javafx.scene.canvas.Canvas;
 public class TileMapViewer {
 
     public Cursor cursor;
+    public boolean cursorColour = false;
 
     public int numCols;
     public int numRows;
@@ -24,8 +24,16 @@ public class TileMapViewer {
     private int tileSize = 16;
     private Image items;
 
-    public Canvas mainCanvas;
+    private Image originalImage;
+    private Image newImage;
 
+    public Canvas mainCanvas;
+    public Canvas currentCanvas;
+
+    /*
+    * Function to load the map file with matrices
+    * Creates a matrix to store all the values in the map file
+    */
     public void loadMap(String mapFile)
     {
         try
@@ -39,13 +47,10 @@ public class TileMapViewer {
             mapMatrix = new int[numRows][numCols];
 
             String delims = "\\s+";
-            for(int row = 0; row < numRows; row++) {
-                String line = br.readLine();
-                String[] tokens = line.split(delims);
-                for(int col = 0; col < numCols; col++) {
-                    mapMatrix[row][col] = Integer.parseInt(tokens[col]);
-                }
-            }
+
+            // call the function in TileMap.java to read the string and load the data from testmap into a matrix
+            TileMap.readTheString(numRows, numCols, delims, br, mapMatrix);
+
         }
         catch(Exception e)
         {
@@ -53,6 +58,10 @@ public class TileMapViewer {
         }
     }
 
+    /*
+    * Function to load the images of the map and items
+    * The images of the map is created and stored in the variable for drawing
+    */
     public void loadImages(String tilesImage)
     {
         try
@@ -69,8 +78,8 @@ public class TileMapViewer {
     public void initMapCanvas()
     {
         mainCanvas = new Canvas(640, 640);
-        tileType = new int[numRows][numCols];
-        cursor = new Cursor();
+        tileType = new int[numRows][numCols]; // store value that determines whether the tile is with obstacle or without obstacle
+        cursor = new Cursor(); //Create new cursor object
 
         for(int row = 0; row < numRows; row++)
         {
@@ -81,7 +90,11 @@ public class TileMapViewer {
                     continue;
                 }
 
+                // This variable is used to retrieve the value according to the test map
                 int rowCol = mapMatrix[row][col];
+
+                // The R and C variables are used to determine the coordinate of the tileset that will be used to
+                // render the tile image according to the testmap.
                 int R = rowCol / numTilesAcross;
                 int C = rowCol % numTilesAcross;
 
@@ -99,17 +112,35 @@ public class TileMapViewer {
                             col * tileSize, row * tileSize, tileSize, tileSize);
                     tileType[row][col] = 1;
                 }
+
+                System.out.print(C + " ");
             }
+            System.out.println(" ");
         }
 
+        originalImage = mainCanvas.snapshot(null, null);
         drawCursor();
+        newImage = mainCanvas.snapshot(null, null);
     }
 
+    // Function to draw the cursor
     public void drawCursor()
     {
         mainCanvas.getGraphicsContext2D().drawImage(
                 cursor.imageArray[cursor.currentCursor], 0, 0, tileSize, tileSize,
-                cursor.initCursorCol * tileSize,
-                cursor.initCursorRow * tileSize, tileSize, tileSize);
+                cursor.CursorCol * tileSize,
+                cursor.CursorRow * tileSize, tileSize, tileSize);
+    }
+
+    private void changeCursorColour()
+    {
+        if(cursorColour == true)
+        {
+            cursor.currentCursor = tileType[cursor.CursorRow][cursor.CursorCol];
+        }
+        else
+        {
+            cursor.currentCursor = 2;
+        }
     }
 }

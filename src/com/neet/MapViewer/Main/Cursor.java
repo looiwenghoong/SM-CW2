@@ -15,8 +15,8 @@ public class Cursor {
     public int currentCursor = 2;
 
     // Initialise the coordinate of the cursor
-    public int initCursorCol;
-    public int initCursorRow;
+    public int CursorCol;
+    public int CursorRow;
 
     public Cursor()
     {
@@ -29,7 +29,7 @@ public class Cursor {
         imageArray[2] = new Image(Cursor.class.getResourceAsStream("/Sprites/cursor_normal.gif"));
 
         // Initialise the coordinate of the cursor to (17,17)
-        initCursorCol = 17;
-        initCursorRow = 17;
+        CursorCol = 17;
+        CursorRow = 17;
     }
 }
