@@ -15,6 +15,10 @@ public class MapMain extends Application {
 
     public static TileMapViewer mapViewer;
     public static Stage primaryStage;
+
+    // Variable to be used in the playstate to determine if this map viewer application is launched
+    public static boolean appLauncher = false;
+
     public BorderPane rootLayout;
     public TilePane mapLayout;
 

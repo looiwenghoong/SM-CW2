@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65fe26ca-938c-4716-a8c3-c0a4d08373e5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/neet/MapViewer/Main/TileMapViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/MapViewer/Main/TileMapViewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/neet/MapViewer/View/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/MapViewer/View/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/neet/DiamondHunter/GameState/PlayState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/DiamondHunter/GameState/PlayState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/neet/MapViewer/Main/MapMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/MapViewer/Main/MapMain.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,12 +40,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="fxml" value="38" />
-          <entry key="java" value="6676" />
+          <entry key="java" value="6965" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6676" />
+          <entry key="JAVA" value="6965" />
           <entry key="XML" value="38" />
         </counts>
       </usages-collector>
@@ -75,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/Main/MapMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="77" column="59" selection-start-line="77" selection-start-column="59" selection-end-line="77" selection-end-column="59" />
+            <state relative-caret-position="194">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#530#531#0" expanded="true" />
@@ -86,19 +87,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/neet/DiamondHunter/GameState/PlayState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2939">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="401">
+              <caret line="209" column="9" selection-start-line="209" selection-start-column="9" selection-end-line="209" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/Main/TileMapViewer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="408">
               <caret line="265" column="81" selection-start-line="265" selection-start-column="81" selection-end-line="265" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -127,23 +128,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/View/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
+            <state relative-caret-position="633">
               <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/View/RootLayout.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="12" column="73" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -169,15 +160,16 @@
         <option value="$PROJECT_DIR$/src/com/neet/MapViewer/MapMain.java" />
         <option value="$PROJECT_DIR$/src/com/neet/DiamondHunter/TileMap/TileMap.java" />
         <option value="$PROJECT_DIR$/src/com/neet/MapViewer/View/RootLayout.fxml" />
-        <option value="$PROJECT_DIR$/src/com/neet/MapViewer/Main/MapMain.java" />
         <option value="$PROJECT_DIR$/src/com/neet/MapViewer/Main/Cursor.java" />
         <option value="$PROJECT_DIR$/src/com/neet/MapViewer/View/MainController.java" />
         <option value="$PROJECT_DIR$/src/com/neet/MapViewer/Main/TileMapViewer.java" />
+        <option value="$PROJECT_DIR$/src/com/neet/MapViewer/Main/MapMain.java" />
+        <option value="$PROJECT_DIR$/src/com/neet/DiamondHunter/GameState/PlayState.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="760" />
+    <option name="width" value="681" />
     <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -362,13 +354,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31697000" />
+    <option name="totallyTimeSpent" value="33760000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="760" height="900" extended-state="6" />
+    <frame x="0" y="0" width="681" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.29761904" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.7076412" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -377,7 +369,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24939759" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24939759" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -466,33 +458,6 @@
     <entry file="file://$PROJECT_DIR$/Resources/Tilesets/testtileset.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/View/RootLayout.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="12" column="73" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/neet/DiamondHunter/GameState/PlayState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2939">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/Main/MapMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="77" column="59" selection-start-line="77" selection-start-column="59" selection-end-line="77" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/Main/Cursor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-177">
@@ -500,19 +465,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/View/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/Main/TileMapViewer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="408">
           <caret line="265" column="81" selection-start-line="265" selection-start-column="81" selection-end-line="265" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -525,6 +480,43 @@
             <element signature="e#1125#1126#0" expanded="true" />
             <element signature="e#1154#1155#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/View/RootLayout.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="12" column="73" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/View/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/Main/MapMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/neet/DiamondHunter/GameState/PlayState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="209" column="9" selection-start-line="209" selection-start-column="9" selection-end-line="209" selection-end-column="9" />
         </state>
       </provider>
     </entry>
