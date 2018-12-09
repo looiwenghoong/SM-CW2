@@ -11,6 +11,7 @@ public class Cursor {
 
     private static Cursor cursor = null;
 
+    public static boolean cursorColour = false;
     // Init the image array
     public Image[] imageArray;
 
@@ -47,19 +48,61 @@ public class Cursor {
         return cursor;
     }
 
-    public static void cursorUp()
+
+    private static void cursorMovementOpt()
     {
-        if(cursor.CursorRow > 0)
+        mapViewer.drawitem();
+        mapViewer.drawCursorToMain();
+        mapViewer.newImage = mapViewer.mainCanvas.snapshot(null, null);
+        mapViewer.updateCurrentCanvas();
+    }
+
+    public static void cursorMovement(int direction)
+    {
+        switch (direction)
         {
-            mapViewer.replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
-            cursor.CursorRow--;
-            System.out.println(cursor.CursorRow);
-//            mapViewer.changeCursorColour();
+            // Cursor Move Up
+            case 1:
+                // If the current cursor row is more than 0
+                // Meaning can move to up
+                if(cursor.CursorRow > 0)
+                {
+                    mapViewer.replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
+                    cursor.CursorRow--;
+                    cursorMovementOpt();
+                }
+                break;
 
-            mapViewer.drawCursorToMain();
+            // Cursor Move down
+            case 2:
+                // If the current cursor row is lesser than the total row of the map - 1
+                // Then move to the down
+                // When move down until reaches the maximum number of map row then cannot move down anymore
+                if(cursor.CursorRow < mapViewer.numRows - 1)
+                {
+                    mapViewer.replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
+                    cursor.CursorRow++;
+                    cursorMovementOpt();
+                }
+                break;
 
-            mapViewer.newImage = mapViewer.mainCanvas.snapshot(null, null);
-            mapViewer.updateCurrentCanvas();
+            // Cursor Move left
+            case 3:
+                if(cursor.CursorCol > 0)
+                {
+                    mapViewer.replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
+                    cursor.CursorCol--;
+                    cursorMovementOpt();
+                }
+                break;
+            // Cursor Move right
+            case 4:
+                if(cursor.CursorCol < mapViewer.numCols - 1)
+                {
+                    mapViewer.replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
+                    cursor.CursorCol++;
+                    cursorMovementOpt();
+                }
         }
     }
 }

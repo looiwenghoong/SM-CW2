@@ -13,24 +13,47 @@ public class TileMapViewer {
     private static TileMapViewer mapViewer = null;
 
     public Cursor cursor;
-    public boolean cursorColour = false;
 
     public int numCols;
     public int numRows;
 
     private int[][] mapMatrix;
-    private int[][] tileType;
+    public int[][] tileType;
 
     private Image tileset;
     private int numTilesAcross;
     private int tileSize = 16;
+
     private Image items;
+    private boolean axeIsPlaced = false;
+    private boolean boatIsPlaced = false;
 
     private Image originalImage;
     public Image newImage;
 
     public Canvas mainCanvas;
     public Canvas currentCanvas;
+
+    /*
+    * Variables for setting the items, boat and axe
+    */
+    private int boatRow = -1;
+    private int boatCol = -1;
+    private int axeRow = -1;
+    private int axeCol = -1;
+
+    public int getBoatRow() {
+        return boatRow;
+    }
+    public int getBoatCol() {
+        return boatCol;
+    }
+    public int getAxeRow() {
+        return axeRow;
+    }
+    public int getAxeCol() {
+        return axeCol;
+    }
 
     public TileMapViewer(){}
 
@@ -74,11 +97,12 @@ public class TileMapViewer {
     * Function to load the images of the map and items
     * The images of the map is created and stored in the variable for drawing
     */
-    public void loadImages(String tilesImage)
+    public void loadImages(String tilesImage, String itemsImage)
     {
         try
         {
             tileset = new Image(TileMapViewer.class.getResourceAsStream(tilesImage));
+            items = new Image(TileMapViewer.class.getResourceAsStream(itemsImage));
             numTilesAcross = (int)tileset.getWidth() / tileSize;
         }
         catch(Exception e)
@@ -178,31 +202,68 @@ public class TileMapViewer {
                 cursor.CursorRow * tileSize, tileSize, tileSize);
     }
 
-    public void changeCursorColour()
+    public void drawitem()
     {
-        if(cursorColour)
+        if(axeIsPlaced)
         {
-            cursor.currentCursor = tileType[cursor.CursorRow][cursor.CursorCol];
+            int axe = 1;
+            mainCanvas.getGraphicsContext2D().drawImage(
+                    items,
+                    axe * tileSize, tileSize, tileSize, tileSize,
+                    axeCol * tileSize,
+                    axeRow * tileSize,
+                    tileSize, tileSize);
         }
-        else
+        if (boatIsPlaced)
         {
-            cursor.currentCursor = 2;
+            int boat = 0;
+            mainCanvas.getGraphicsContext2D().drawImage(
+                    items,
+                    boat * tileSize, tileSize, tileSize, tileSize,
+                    boatCol * tileSize,
+                    boatRow * tileSize,
+                    tileSize, tileSize);
         }
     }
 
-//    public void cursorUp()
-//    {
-//        if(cursor.CursorRow > 0)
-//        {
-//            replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
-//            cursor.CursorRow--;
-//            System.out.println(cursor.CursorRow);
-//            changeCursorColour();
-//
-//            drawCursorToMain();
-//
-//            newImage = mainCanvas.snapshot(null, null);
-//            updateCurrentCanvas();
-//        }
-//    }
+    public int setItem()
+    {
+        int handleType;
+        Cursor.cursorColour = false;
+
+        replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
+
+        if (tileType[cursor.CursorRow][cursor.CursorCol] == 1) {
+            handleType = 1;
+        }
+        // return type: Axe put successful
+        else {
+            if (axeIsPlaced) {
+                replaceToOriginal(axeCol, axeRow);
+
+                tileType[axeRow][axeCol] = 0;
+                tileType[cursor.CursorRow][cursor.CursorCol] = 1;
+
+                handleType = 2;
+            }
+            else {
+                handleType = 0;
+            }
+
+            axeIsPlaced = true;
+            tileType[cursor.CursorRow][cursor.CursorCol] = 1;
+
+            axeRow = cursor.CursorRow;
+            axeCol = cursor.CursorCol;
+            System.out.println(axeRow + " " + axeCol);
+        }
+
+        drawitem();
+        drawCursorToMain();
+
+        newImage = mainCanvas.snapshot(null, null);
+        updateCurrentCanvas();
+
+        return handleType;
+    }
 }

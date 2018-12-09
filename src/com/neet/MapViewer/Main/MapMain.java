@@ -58,7 +58,7 @@ public class MapMain extends Application {
     {
         mapViewer = TileMapViewer.getInstance();
         mapViewer.loadMap("/Maps/testmap.map");
-        mapViewer.loadImages("/Tilesets/testtileset.gif");
+        mapViewer.loadImages("/Tilesets/testtileset.gif", "/Sprites/items.gif");
         mapViewer.initMapCanvas();
         try
         {
