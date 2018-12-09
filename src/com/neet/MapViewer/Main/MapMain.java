@@ -13,6 +13,7 @@ import javax.swing.border.Border;
 
 public class MapMain extends Application {
 
+    public static TileMapViewer mapViewer;
     public static Stage primaryStage;
     public BorderPane rootLayout;
     public TilePane mapLayout;
@@ -44,7 +45,7 @@ public class MapMain extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
 
-            fadeAnimation();
+//            fadeAnimation();
         }
         catch (Exception e)
         {
@@ -55,7 +56,7 @@ public class MapMain extends Application {
 //    Function to show the map
     public void initMapLayout()
     {
-        TileMapViewer mapViewer = new TileMapViewer();
+        mapViewer = TileMapViewer.getInstance();
         mapViewer.loadMap("/Maps/testmap.map");
         mapViewer.loadImages("/Tilesets/testtileset.gif");
         mapViewer.initMapCanvas();
@@ -74,7 +75,7 @@ public class MapMain extends Application {
         // Set the number of columns and rows for the tilepane map layout
         mapLayout.setPrefColumns(mapViewer.numCols);
         mapLayout.setPrefRows(mapViewer.numRows);
-        mapLayout.getChildren().add(mapViewer.mainCanvas);
+        mapLayout.getChildren().add(mapViewer.currentCanvas);
         rootLayout.setCenter(mapLayout);
     }
 

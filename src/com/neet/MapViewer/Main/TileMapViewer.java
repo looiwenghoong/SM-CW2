@@ -10,6 +10,8 @@ import javafx.scene.canvas.Canvas;
 
 public class TileMapViewer {
 
+    private static TileMapViewer mapViewer = null;
+
     public Cursor cursor;
     public boolean cursorColour = false;
 
@@ -25,11 +27,21 @@ public class TileMapViewer {
     private Image items;
 
     private Image originalImage;
-    private Image newImage;
+    public Image newImage;
 
     public Canvas mainCanvas;
     public Canvas currentCanvas;
 
+    public TileMapViewer(){}
+
+    public static TileMapViewer getInstance()
+    {
+        if(mapViewer == null)
+        {
+            mapViewer = new TileMapViewer();
+        }
+        return mapViewer;
+    }
     /*
     * Function to load the map file with matrices
     * Creates a matrix to store all the values in the map file
@@ -75,11 +87,13 @@ public class TileMapViewer {
         }
     }
 
-    public void initMapCanvas()
+    // Function that initialise the canvas of the map
+    void initMapCanvas()
     {
         mainCanvas = new Canvas(640, 640);
+        currentCanvas = new Canvas(640, 640);
         tileType = new int[numRows][numCols]; // store value that determines whether the tile is with obstacle or without obstacle
-        cursor = new Cursor(); //Create new cursor object
+        cursor = Cursor.getInstance();
 
         for(int row = 0; row < numRows; row++)
         {
@@ -98,33 +112,65 @@ public class TileMapViewer {
                 int R = rowCol / numTilesAcross;
                 int C = rowCol % numTilesAcross;
 
+                // if else statement to determine whether to load the tileset image from row 1 or row 2
+                // tileset row 1 contains no obstacle
+                // tileset row 2 contains obstacle
                 if(R == 0)
                 {
                     mainCanvas.getGraphicsContext2D().drawImage(
                             tileset, C * tileSize, 0, tileSize, tileSize,
                             col * tileSize, row * tileSize, tileSize, tileSize);
-                    tileType[row][col] = 0;
+                    currentCanvas.getGraphicsContext2D().drawImage(
+                            tileset, C * tileSize, 0, tileSize, tileSize,
+                            col * tileSize, row * tileSize, tileSize, tileSize);
+                    tileType[row][col] = 0; // tileType == 0 means the tile has no obstacle
                 }
                 else
                 {
                     mainCanvas.getGraphicsContext2D().drawImage(
                             tileset, C * tileSize, tileSize, tileSize, tileSize,
                             col * tileSize, row * tileSize, tileSize, tileSize);
-                    tileType[row][col] = 1;
+                    currentCanvas.getGraphicsContext2D().drawImage(
+                            tileset, C * tileSize, tileSize, tileSize, tileSize,
+                            col * tileSize, row * tileSize, tileSize, tileSize);
+                    tileType[row][col] = 1; // tiletype == 1 means the tile has obstacle
                 }
-
-                System.out.print(C + " ");
             }
-            System.out.println(" ");
         }
 
         originalImage = mainCanvas.snapshot(null, null);
-        drawCursor();
+        drawCursorToMain();
+        currentCanvas.getGraphicsContext2D().drawImage(
+                cursor.imageArray[cursor.currentCursor], 0, 0, tileSize, tileSize,
+                cursor.CursorCol * tileSize, cursor.CursorRow * tileSize,
+                tileSize, tileSize);
         newImage = mainCanvas.snapshot(null, null);
     }
 
+    // Function to replace the tile back to the original tile after the cursor is moved
+    void replaceToOriginal(int col, int row)
+    {
+        mainCanvas.getGraphicsContext2D().drawImage(
+                originalImage,
+                col * tileSize,
+                row * tileSize,
+                tileSize, tileSize,
+                col * tileSize,
+                row * tileSize,
+                tileSize, tileSize);
+    }
+
+    public void updateCurrentCanvas()
+    {
+        currentCanvas.getGraphicsContext2D().drawImage(
+                newImage, 0, 0,
+                numCols * tileSize, numRows * tileSize,
+                0, 0, 640, 640);
+    }
+
+
     // Function to draw the cursor
-    public void drawCursor()
+    public void drawCursorToMain()
     {
         mainCanvas.getGraphicsContext2D().drawImage(
                 cursor.imageArray[cursor.currentCursor], 0, 0, tileSize, tileSize,
@@ -132,9 +178,9 @@ public class TileMapViewer {
                 cursor.CursorRow * tileSize, tileSize, tileSize);
     }
 
-    private void changeCursorColour()
+    public void changeCursorColour()
     {
-        if(cursorColour == true)
+        if(cursorColour)
         {
             cursor.currentCursor = tileType[cursor.CursorRow][cursor.CursorCol];
         }
@@ -143,4 +189,20 @@ public class TileMapViewer {
             cursor.currentCursor = 2;
         }
     }
+
+//    public void cursorUp()
+//    {
+//        if(cursor.CursorRow > 0)
+//        {
+//            replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
+//            cursor.CursorRow--;
+//            System.out.println(cursor.CursorRow);
+//            changeCursorColour();
+//
+//            drawCursorToMain();
+//
+//            newImage = mainCanvas.snapshot(null, null);
+//            updateCurrentCanvas();
+//        }
+//    }
 }

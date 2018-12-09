@@ -7,6 +7,10 @@ import javafx.scene.image.Image;
 
 public class Cursor {
 
+    private static TileMapViewer mapViewer;
+
+    private static Cursor cursor = null;
+
     // Init the image array
     public Image[] imageArray;
 
@@ -18,8 +22,10 @@ public class Cursor {
     public int CursorCol;
     public int CursorRow;
 
-    public Cursor()
+    private Cursor()
     {
+        mapViewer = TileMapViewer.getInstance();
+
         // Create an image array of 3 element to contain all the available cursor
         imageArray = new Image[3];
 
@@ -31,5 +37,29 @@ public class Cursor {
         // Initialise the coordinate of the cursor to (17,17)
         CursorCol = 17;
         CursorRow = 17;
+    }
+
+    public static Cursor getInstance()
+    {
+        if(cursor == null) {
+            cursor = new Cursor();
+        }
+        return cursor;
+    }
+
+    public static void cursorUp()
+    {
+        if(cursor.CursorRow > 0)
+        {
+            mapViewer.replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
+            cursor.CursorRow--;
+            System.out.println(cursor.CursorRow);
+//            mapViewer.changeCursorColour();
+
+            mapViewer.drawCursorToMain();
+
+            mapViewer.newImage = mapViewer.mainCanvas.snapshot(null, null);
+            mapViewer.updateCurrentCanvas();
+        }
     }
 }
