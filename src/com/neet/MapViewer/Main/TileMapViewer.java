@@ -226,9 +226,23 @@ public class TileMapViewer {
         }
     }
 
-    public int setItem()
+    private int checkItemPlaced(boolean itemCondition, int itemRow, int itemCol)
     {
-        int handleType;
+        if(itemCondition)
+        {
+            replaceToOriginal(itemCol, itemRow);
+            tileType[itemRow][itemCol] = 0;
+            return 2;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public int setItem(int itemType)
+    {
+        int handleType = 0;
         Cursor.cursorColour = false;
 
         replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
@@ -238,24 +252,25 @@ public class TileMapViewer {
         }
         // return type: Axe put successful
         else {
-            if (axeIsPlaced) {
-                replaceToOriginal(axeCol, axeRow);
+            switch (itemType)
+            {
+                case 1:
+                    handleType = checkItemPlaced(axeIsPlaced, axeRow, axeCol);
+                    axeIsPlaced = true;
+                    tileType[cursor.CursorRow][cursor.CursorCol] = 1;
 
-                tileType[axeRow][axeCol] = 0;
-                tileType[cursor.CursorRow][cursor.CursorCol] = 1;
+                    axeRow = cursor.CursorRow;
+                    axeCol = cursor.CursorCol;
+                    break;
+                case 2:
+                    handleType = checkItemPlaced(boatIsPlaced, boatRow, boatCol);
+                    boatIsPlaced = true;
+                    tileType[cursor.CursorRow][cursor.CursorCol] = 1;
 
-                handleType = 2;
+                    boatRow = cursor.CursorRow;
+                    boatCol = cursor.CursorCol;
+                    break;
             }
-            else {
-                handleType = 0;
-            }
-
-            axeIsPlaced = true;
-            tileType[cursor.CursorRow][cursor.CursorCol] = 1;
-
-            axeRow = cursor.CursorRow;
-            axeCol = cursor.CursorCol;
-            System.out.println(axeRow + " " + axeCol);
         }
 
         drawitem();

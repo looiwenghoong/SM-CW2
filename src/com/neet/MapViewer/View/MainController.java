@@ -39,7 +39,11 @@ public class MainController {
     {
         if(event.getCode() == KeyCode.K)
         {
-            MapMain.mapViewer.setItem();
+            MapMain.mapViewer.setItem(1);
+        }
+        else if(event.getCode() == KeyCode.L)
+        {
+            MapMain.mapViewer.setItem(2);
         }
     }
 }
