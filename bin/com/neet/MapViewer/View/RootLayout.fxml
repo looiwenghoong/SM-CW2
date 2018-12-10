@@ -31,13 +31,14 @@
                   <Insets left="55.0" />
                </GridPane.margin>
             </Button>
-            <Label prefHeight="50.0" prefWidth="100.0" text="AXE: NULL" GridPane.rowIndex="3">
-               <GridPane.margin>
-                  <Insets left="45.0" />
-               </GridPane.margin>
+            <Label text="TO MOVE:" GridPane.rowIndex="1">
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
-               </font></Label>
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="230.0" left="110.0" />
+               </GridPane.margin>
+            </Label>
             <Label prefHeight="50.0" prefWidth="100.0" text="BOAT: NULL" wrapText="true" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="175.0" />
@@ -45,6 +46,61 @@
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
                </font></Label>
+            <Label text="S (down)" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="90.0" left="120.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label text="PLACE BOAT: 2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="95.0" top="130.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label text="PLACE AXE: 1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="100.0" top="35.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="A (left)" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="90.0" left="30.0" />
+               </GridPane.margin></Label>
+            <Label text="D (right)" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="90.0" left="215.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label text="W (up)" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="150.0" left="130.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label text="AXE: NULL" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="60.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
             <Label alignment="CENTER" prefWidth="170.0" text="CURSOR COORDINATE: (17, 17)" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2">
                <font>
                   <Font name="Comic Sans MS" size="14.0" />

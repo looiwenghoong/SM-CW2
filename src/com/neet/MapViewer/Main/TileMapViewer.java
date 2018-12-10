@@ -244,6 +244,7 @@ public class TileMapViewer {
     {
         int handleType = 0;
         Cursor.cursorColour = false;
+        Cursor.changeCursorColour();
 
         replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
 
