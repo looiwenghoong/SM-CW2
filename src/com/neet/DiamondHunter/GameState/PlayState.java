@@ -8,6 +8,7 @@ package com.neet.DiamondHunter.GameState;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.util.ArrayList;
+import java.util.Map;
 
 import com.neet.DiamondHunter.Entity.Diamond;
 import com.neet.DiamondHunter.Entity.Item;
@@ -20,6 +21,7 @@ import com.neet.DiamondHunter.Manager.GameStateManager;
 import com.neet.DiamondHunter.Manager.JukeBox;
 import com.neet.DiamondHunter.Manager.Keys;
 import com.neet.DiamondHunter.TileMap.TileMap;
+import com.neet.MapViewer.Main.MapMain;
 
 public class PlayState extends GameState {
 	
@@ -176,14 +178,37 @@ public class PlayState extends GameState {
 		
 		item = new Item(tileMap);
 		item.setType(Item.AXE);
-		item.setTilePosition(26, 37);
+		if(MapMain.appLauncher == false)
+		{
+			item.setTilePosition(26, 37);
+		}
+		else if(MapMain.mapViewer.getAxeCol() == -1 && MapMain.mapViewer.getAxeRow() == -1)
+		{
+			item.setTilePosition(26, 37);
+		}
+		else
+		{
+			item.setTilePosition(MapMain.mapViewer.getAxeRow(), MapMain.mapViewer.getAxeCol());
+		}
+
 		items.add(item);
 		
 		item = new Item(tileMap);
 		item.setType(Item.BOAT);
-		item.setTilePosition(12, 4);
+
+		if(MapMain.appLauncher == false)
+		{
+			item.setTilePosition(12, 4);
+		}
+		else if(MapMain.mapViewer.getBoatCol() == -1 && MapMain.mapViewer.getBoatRow() == -1)
+		{
+			item.setTilePosition(12, 4);
+		}
+		else
+		{
+			item.setTilePosition(MapMain.mapViewer.getBoatRow(), MapMain.mapViewer.getBoatCol());
+		}
 		items.add(item);
-		
 	}
 	
 	public void update() {

@@ -7,6 +7,11 @@ import javafx.scene.image.Image;
 
 public class Cursor {
 
+    private static TileMapViewer mapViewer;
+
+    private static Cursor cursor = null;
+
+    public static boolean cursorColour = false;
     // Init the image array
     public Image[] imageArray;
 
@@ -15,11 +20,13 @@ public class Cursor {
     public int currentCursor = 2;
 
     // Initialise the coordinate of the cursor
-    public int initCursorCol;
-    public int initCursorRow;
+    public int CursorCol;
+    public int CursorRow;
 
-    public Cursor()
+    private Cursor()
     {
+        mapViewer = TileMapViewer.getInstance();
+
         // Create an image array of 3 element to contain all the available cursor
         imageArray = new Image[3];
 
@@ -29,7 +36,73 @@ public class Cursor {
         imageArray[2] = new Image(Cursor.class.getResourceAsStream("/Sprites/cursor_normal.gif"));
 
         // Initialise the coordinate of the cursor to (17,17)
-        initCursorCol = 17;
-        initCursorRow = 17;
+        CursorCol = 17;
+        CursorRow = 17;
+    }
+
+    public static Cursor getInstance()
+    {
+        if(cursor == null) {
+            cursor = new Cursor();
+        }
+        return cursor;
+    }
+
+
+    private static void cursorMovementOpt()
+    {
+        mapViewer.drawitem();
+        mapViewer.drawCursorToMain();
+        mapViewer.newImage = mapViewer.mainCanvas.snapshot(null, null);
+        mapViewer.updateCurrentCanvas();
+    }
+
+    public static void cursorMovement(int direction)
+    {
+        switch (direction)
+        {
+            // Cursor Move Up
+            case 1:
+                // If the current cursor row is more than 0
+                // Meaning can move to up
+                if(cursor.CursorRow > 0)
+                {
+                    mapViewer.replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
+                    cursor.CursorRow--;
+                    cursorMovementOpt();
+                }
+                break;
+
+            // Cursor Move down
+            case 2:
+                // If the current cursor row is lesser than the total row of the map - 1
+                // Then move to the down
+                // When move down until reaches the maximum number of map row then cannot move down anymore
+                if(cursor.CursorRow < mapViewer.numRows - 1)
+                {
+                    mapViewer.replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
+                    cursor.CursorRow++;
+                    cursorMovementOpt();
+                }
+                break;
+
+            // Cursor Move left
+            case 3:
+                if(cursor.CursorCol > 0)
+                {
+                    mapViewer.replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
+                    cursor.CursorCol--;
+                    cursorMovementOpt();
+                }
+                break;
+            // Cursor Move right
+            case 4:
+                if(cursor.CursorCol < mapViewer.numCols - 1)
+                {
+                    mapViewer.replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
+                    cursor.CursorCol++;
+                    cursorMovementOpt();
+                }
+        }
     }
 }
