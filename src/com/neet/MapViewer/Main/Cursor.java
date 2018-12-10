@@ -48,7 +48,6 @@ public class Cursor {
         return cursor;
     }
 
-
     private static void cursorMovementOpt()
     {
         mapViewer.drawitem();
@@ -104,5 +103,27 @@ public class Cursor {
                     cursorMovementOpt();
                 }
         }
+    }
+
+    public static void changeCursorColour()
+    {
+        if(cursorColour)
+        {
+            cursor.currentCursor = mapViewer.tileType[cursor.CursorRow][cursor.CursorCol];
+        }
+        else
+        {
+            cursor.currentCursor = 2;
+        }
+    }
+
+    public static void turnOnCursorColour()
+    {
+        cursorColour = true;
+        mapViewer.replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
+        cursor.changeCursorColour();
+        mapViewer.drawCursorToMain();
+        mapViewer.newImage = mapViewer.mainCanvas.snapshot(null, null);
+        mapViewer.updateCurrentCanvas();
     }
 }
