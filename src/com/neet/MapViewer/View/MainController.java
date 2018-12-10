@@ -28,6 +28,14 @@ public class MainController {
         else if(event.getCode() == KeyCode.D || event.getCode() == KeyCode.RIGHT) {
             Cursor.cursorMovement(4);
         }
+
+        else if(event.getCode() == KeyCode.DIGIT1) {
+            Cursor.turnOnCursorColour();
+        }
+
+        else if(event.getCode() == KeyCode.DIGIT2) {
+            Cursor.turnOnCursorColour();
+        }
     }
 
     @FXML
