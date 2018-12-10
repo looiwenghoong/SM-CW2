@@ -20,12 +20,11 @@
         <rowConstraints>
             <RowConstraints minHeight="5.0" prefHeight="1.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="1.0" prefHeight="5.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="1.0" prefHeight="5.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="1.0" prefHeight="50.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="1.0" prefHeight="5.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Version 1.0" GridPane.rowIndex="4">
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Version 1.0" GridPane.rowIndex="3">
                <font>
                   <Font name="Comic Sans MS" size="20.0" />
                </font>
@@ -33,9 +32,9 @@
                   <Insets left="55.0" />
                </GridPane.margin>
             </Button>
-            <Label fx:id="boatId" prefHeight="50.0" prefWidth="100.0" text="BOAT: NULL" wrapText="true" GridPane.rowIndex="3">
+            <Label fx:id="boatId" prefHeight="50.0" prefWidth="100.0" text="BOAT: (17, 17)" wrapText="true" GridPane.rowIndex="2">
                <GridPane.margin>
-                  <Insets left="175.0" />
+                  <Insets left="185.0" top="75.0" />
                </GridPane.margin>
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
@@ -87,9 +86,9 @@
                   <Font name="Comic Sans MS Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="axeId" text="AXE: NULL" GridPane.rowIndex="3">
+            <Label fx:id="axeId" text="AXE: (17, 17)" GridPane.rowIndex="2">
                <GridPane.margin>
-                  <Insets left="50.0" />
+                  <Insets left="55.0" top="75.0" />
                </GridPane.margin>
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
@@ -100,7 +99,7 @@
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
                <GridPane.margin>
-                  <Insets left="70.0" />
+                  <Insets bottom="45.0" left="70.0" />
                </GridPane.margin>
             </Label>
             <Button mnemonicParsing="false" prefWidth="160.0" text="Instruction">
@@ -119,7 +118,7 @@
                   <Insets bottom="280.0" />
                </GridPane.margin>
             </Label>
-            <ImageView fx:id="axeContainer" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+            <ImageView fx:id="axeContainer" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                <image>
                   <Image url="/Sprites/axe.png" />
                </image>
@@ -127,12 +126,28 @@
                   <Insets left="35.0" top="65.0" />
                </GridPane.margin>
             </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                <image>
                   <Image url="/Sprites/boat.png" />
                </image>
                <GridPane.margin>
                   <Insets left="35.0" top="190.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+               <image>
+                  <Image url="/Sprites/axe.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="20.0" top="75.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+               <image>
+                  <Image url="/Sprites/boat.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="150.0" top="75.0" />
                </GridPane.margin>
             </ImageView>
          </children>
