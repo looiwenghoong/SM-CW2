@@ -68,7 +68,7 @@ public class TileMapViewer {
 
     public void initMapCanvas()
     {
-        mainCanvas = new Canvas(640, 640);
+        mainCanvas = new Canvas(640,640);
         tileType = new int[numRows][numCols];
         cursor = new Cursor();
 
