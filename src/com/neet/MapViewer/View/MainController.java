@@ -1,5 +1,6 @@
 package com.neet.MapViewer.View;
 
+import com.neet.DiamondHunter.Main.Game;
 import com.neet.MapViewer.Main.Cursor;
 import com.neet.MapViewer.Main.MapMain;
 import javafx.fxml.FXML;
@@ -28,6 +29,12 @@ public class MainController {
         else if(event.getCode() == KeyCode.D || event.getCode() == KeyCode.RIGHT) {
             Cursor.cursorMovement(4);
         }
+        else if(event.getCode() == KeyCode.ENTER)
+        {
+            MapMain.primaryStage.hide();
+            Game.main(null);
+        }
+
     }
 
     @FXML

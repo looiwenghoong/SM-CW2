@@ -2,6 +2,7 @@ package com.neet.MapViewer.Main;
 
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -31,8 +32,12 @@ public class MapMain extends Application {
     public void start(Stage primaryStage) {
         MapMain.primaryStage = primaryStage;
         MapMain.primaryStage.setTitle("Map Viewer");
+
+        Platform.setImplicitExit(false);
         initRootView();
         initMapLayout();
+
+        appLauncher = true;
     }
 
 //    Function to init the root view
@@ -50,7 +55,7 @@ public class MapMain extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
 
-//            fadeAnimation();
+            fadeAnimation();
         }
         catch (Exception e)
         {
