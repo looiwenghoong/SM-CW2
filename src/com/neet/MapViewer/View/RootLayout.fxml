@@ -18,13 +18,14 @@
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints minHeight="5.0" prefHeight="1.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="70.0" minHeight="5.0" prefHeight="1.0" valignment="CENTER" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
           <RowConstraints minHeight="1.0" prefHeight="50.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="1.0" prefHeight="1.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="50.0" minHeight="1.0" prefHeight="1.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="200.0" text="Version 1.0" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="200.0" text="Version 1.0" GridPane.rowIndex="4">
                <font>
                   <Font name="Comic Sans MS" size="16.0" />
                </font>
@@ -32,7 +33,7 @@
                   <Insets left="55.0" />
                </GridPane.margin>
             </Button>
-            <Label fx:id="boatId" prefHeight="50.0" prefWidth="100.0" text="BOAT: (17, 17)" wrapText="true" GridPane.rowIndex="2">
+            <Label fx:id="boatId" prefHeight="50.0" prefWidth="100.0" text="BOAT: (17, 17)" wrapText="true" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="185.0" top="75.0" />
                </GridPane.margin>
@@ -98,7 +99,7 @@
                   <Insets left="7.0" />
                </padding>
             </Label>
-            <Label fx:id="axeId" text="AXE: (17, 17)" GridPane.rowIndex="2">
+            <Label fx:id="axeId" text="AXE: (17, 17)" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="55.0" top="75.0" />
                </GridPane.margin>
@@ -106,15 +107,15 @@
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="cursorId" alignment="CENTER" prefWidth="170.0" text="CURSOR COORDINATE: (17, 17)" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2">
+            <Label fx:id="cursorId" alignment="CENTER" prefWidth="170.0" text="CURSOR: (17, 17)" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="3">
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
                <GridPane.margin>
-                  <Insets bottom="35.0" left="90.0" />
+                  <Insets bottom="50.0" left="90.0" />
                </GridPane.margin>
             </Label>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadowEffect" GridPane.rowIndex="2">
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadowEffect" GridPane.rowIndex="3">
                <image>
                   <Image url="/Sprites/cursor_normal.gif" />
                </image>
@@ -138,7 +139,7 @@
                   <Insets left="35.0" top="190.0" />
                </GridPane.margin>
             </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadowEffect" GridPane.rowIndex="2">
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadowEffect" GridPane.rowIndex="3">
                <image>
                   <Image url="/Sprites/axe.png" />
                </image>
@@ -146,7 +147,7 @@
                   <Insets left="20.0" top="75.0" />
                </GridPane.margin>
             </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadowEffect" GridPane.rowIndex="2">
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadowEffect" GridPane.rowIndex="3">
                <image>
                   <Image url="/Sprites/boat.png" />
                </image>
@@ -154,20 +155,17 @@
                   <Insets left="150.0" top="75.0" />
                </GridPane.margin>
             </ImageView>
-            <Label prefHeight="200.0" prefWidth="310.0" style="-fx-background-color: #000000;" text="--INSTRUCTION--" textAlignment="CENTER" textFill="WHITE">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="150.0" prefWidth="310.0" style="-fx-background-color: #000000;" text="--INSTRUCTION--" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Comic Sans MS Bold" size="22.0" />
                </font>
-               <padding>
-                  <Insets left="47.0" />
-               </padding>
             </Label>
             <Label text="Up" GridPane.rowIndex="1">
                <font>
                   <Font name="Comic Sans MS Bold" size="14.0" />
                </font>
                <GridPane.margin>
-                  <Insets bottom="195.0" left="80.0" />
+                  <Insets bottom="195.0" left="170.0" />
                </GridPane.margin>
             </Label>
             <Label text="Left" GridPane.rowIndex="1">
@@ -192,6 +190,14 @@
                </font>
                <GridPane.margin>
                   <Insets bottom="90.0" left="240.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="200.0" prefWidth="310.0" style="-fx-background-color: #000000;" text="--COORDINATES--" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="22.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
                </GridPane.margin>
             </Label>
          </children>

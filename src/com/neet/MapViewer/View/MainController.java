@@ -20,25 +20,25 @@ public class MainController {
         //press W key to move the cursor upwards
         if(event.getCode() == KeyCode.W || event.getCode() == KeyCode.UP) {
             Cursor.cursorMovement(1);
-            cursorId.setText("CURSOR COORDINATE: (" + Cursor.CursorRow + ", " + Cursor.CursorCol + ")");
+            cursorId.setText("CURSOR: (" + Cursor.CursorRow + ", " + Cursor.CursorCol + ")");
         }
 
         //press S key to move the cursor downwards
         else if(event.getCode() == KeyCode.S || event.getCode() == KeyCode.DOWN) {
             Cursor.cursorMovement(2);
-            cursorId.setText("CURSOR COORDINATE: (" + Cursor.CursorRow + ", " + Cursor.CursorCol + ")");
+            cursorId.setText("CURSOR: (" + Cursor.CursorRow + ", " + Cursor.CursorCol + ")");
         }
 
         //press A key to move the cursor to the left
         else if(event.getCode() == KeyCode.A || event.getCode() == KeyCode.LEFT) {
             Cursor.cursorMovement(3);
-            cursorId.setText("CURSOR COORDINATE: (" + Cursor.CursorRow + ", " + Cursor.CursorCol + ")");
+            cursorId.setText("CURSOR: (" + Cursor.CursorRow + ", " + Cursor.CursorCol + ")");
         }
 
         //press D key to move the cursor to the right
         else if(event.getCode() == KeyCode.D || event.getCode() == KeyCode.RIGHT) {
             Cursor.cursorMovement(4);
-            cursorId.setText("CURSOR COORDINATE: (" + Cursor.CursorRow + ", " + Cursor.CursorCol + ")");
+            cursorId.setText("CURSOR: (" + Cursor.CursorRow + ", " + Cursor.CursorCol + ")");
         }
 
         else if(event.getCode() == KeyCode.DIGIT1) {
