@@ -2,30 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65fe26ca-938c-4716-a8c3-c0a4d08373e5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Entity/Animation.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Entity/Animation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Entity/Diamond.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Entity/Diamond.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Entity/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Entity/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Entity/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Entity/Sparkle.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Entity/Sparkle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/GameState/GameOverState.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/GameState/GameOverState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/GameState/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/GameState/GameState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/GameState/IntroState.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/GameState/IntroState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/GameState/MenuState.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/GameState/MenuState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/GameState/PauseState.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/GameState/PauseState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/HUD/Hud.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/HUD/Hud.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Main/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Main/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Main/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Main/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Manager/Content.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Manager/Content.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Manager/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Manager/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Manager/GameStateManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Manager/GameStateManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Manager/JukeBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Manager/JukeBox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Manager/Keys.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/Manager/Keys.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/TileMap/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/DiamondHunter/TileMap/Tile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/MapViewer/View/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/MapViewer/View/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/MapViewer/View/RootLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/MapViewer/View/RootLayout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/neet/MapViewer/View/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/MapViewer/View/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/neet/MapViewer/View/RootLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/MapViewer/View/RootLayout.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -113,12 +89,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="fxml" value="1" />
+          <entry key="fxml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="XML" value="1" />
+          <entry key="XML" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -190,7 +166,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/View/RootLayout.fxml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="-10">
+            <state relative-caret-position="45">
               <caret line="3" column="38" lean-forward="true" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
             </state>
           </provider>
@@ -398,18 +374,18 @@
       <option name="presentableId" value="Default" />
       <updated>1543376273254</updated>
       <workItem from="1543376276214" duration="3531000" />
-      <workItem from="1544417466269" duration="2323000" />
+      <workItem from="1544417466269" duration="4740000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39284000" />
+    <option name="totallyTimeSpent" value="41701000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16881259" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1137339" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24964234" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -425,7 +401,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32771084" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32771084" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.24939759" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -525,6 +501,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/View/MapLayout.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/View/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -535,17 +519,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/View/MapLayout.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/View/RootLayout.fxml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="-10">
+        <state relative-caret-position="45">
           <caret line="3" column="38" lean-forward="true" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
         </state>
       </provider>
