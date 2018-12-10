@@ -31,43 +31,43 @@
                   <Insets left="55.0" />
                </GridPane.margin>
             </Button>
-            <Label text="TO MOVE:" GridPane.rowIndex="1">
+            <Label prefWidth="71.0" text="TO MOVE:" GridPane.rowIndex="1">
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
                <GridPane.margin>
-                  <Insets bottom="230.0" left="110.0" />
+                  <Insets bottom="230.0" left="120.0" />
                </GridPane.margin>
             </Label>
             <Label fx:id="boatId" prefHeight="50.0" prefWidth="100.0" text="BOAT: NULL" wrapText="true" GridPane.rowIndex="3">
                <GridPane.margin>
-                  <Insets left="175.0" />
+                  <Insets bottom="10.0" left="175.0" />
                </GridPane.margin>
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
                </font></Label>
-            <Label text="S (down)" GridPane.rowIndex="1">
+            <Label prefWidth="60.0" text="S (down)" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets bottom="90.0" left="120.0" />
+                  <Insets bottom="90.0" left="125.0" />
                </GridPane.margin>
                <font>
                   <Font name="Comic Sans MS Bold" size="14.0" />
                </font>
             </Label>
-            <Label text="PLACE BOAT: 2" GridPane.rowIndex="1">
+            <Label prefWidth="175.0" text="PRESS 2 TO PLACE BOAT" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="95.0" top="130.0" />
+                  <Insets left="67.5" top="210.0" />
                </GridPane.margin>
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
             </Label>
-            <Label text="PLACE AXE: 1" GridPane.rowIndex="1">
+            <Label prefWidth="160.0" text="PRESS 1 TO PLACE AXE" GridPane.rowIndex="1">
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
                <GridPane.margin>
-                  <Insets left="100.0" top="35.0" />
+                  <Insets left="75.0" top="105.0" />
                </GridPane.margin>
             </Label>
             <Label text="A (left)" GridPane.rowIndex="1">
@@ -79,13 +79,13 @@
                </GridPane.margin></Label>
             <Label text="D (right)" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets bottom="90.0" left="215.0" />
+                  <Insets bottom="90.0" left="225.0" />
                </GridPane.margin>
                <font>
                   <Font name="Comic Sans MS Bold" size="14.0" />
                </font>
             </Label>
-            <Label text="W (up)" GridPane.rowIndex="1">
+            <Label prefWidth="50.0" text="W (up)" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="150.0" left="130.0" />
                </GridPane.margin>
@@ -95,7 +95,7 @@
             </Label>
             <Label fx:id="axeId" text="AXE: NULL" GridPane.rowIndex="3">
                <GridPane.margin>
-                  <Insets left="60.0" />
+                  <Insets bottom="10.0" left="50.0" />
                </GridPane.margin>
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
@@ -106,7 +106,7 @@
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
                <GridPane.margin>
-                  <Insets left="70.0" />
+                  <Insets left="70.0" top="40.0" />
                </GridPane.margin>
             </Label>
             <Button mnemonicParsing="false" prefWidth="160.0" text="Instruction">
@@ -117,7 +117,7 @@
                   <Insets left="75.0" />
                </GridPane.margin>
             </Button>
-            <Label layoutX="125.0" layoutY="118.0" minHeight="2.0" minWidth="1.0" prefHeight="2.0" prefWidth="310.0" style="-fx-background-color: #000000;" GridPane.rowIndex="1">
+            <Label layoutX="125.0" layoutY="118.0" minHeight="3.0" minWidth="1.0" prefHeight="3.0" prefWidth="360.0" style="-fx-background-color: #000000;" GridPane.rowIndex="1">
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
