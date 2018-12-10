@@ -1,14 +1,7 @@
 .grid
 {
-    -fx-background-color: #aee8d7;
-    -fx-border-style: solid;
-    -fx-border-width: 5;
-    -fx-border-color: black;
-}
-
-.axeImageContainer
-{
-    -fx-border-style: solid;
-    -fx-border-width: 2;
-    -fx-border-color: black;
+    -fx-background-color: white;
+    /*!*-fx-border-style: solid;*!*/
+    /*!*-fx-border-width: 5;*!*/
+    /*-fx-border-color: black;*/
 }

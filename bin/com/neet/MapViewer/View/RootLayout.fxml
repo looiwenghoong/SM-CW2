@@ -21,12 +21,12 @@
             <RowConstraints minHeight="5.0" prefHeight="1.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="1.0" prefHeight="50.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="1.0" prefHeight="5.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="1.0" prefHeight="1.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Version 1.0" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="200.0" text="Version 1.0" GridPane.rowIndex="3">
                <font>
-                  <Font name="Comic Sans MS" size="20.0" />
+                  <Font name="Comic Sans MS" size="16.0" />
                </font>
                <GridPane.margin>
                   <Insets left="55.0" />
