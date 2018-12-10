@@ -24,7 +24,7 @@ public class TileMapViewer {
     private int numTilesAcross;
     private int tileSize = 16;
 
-    private Image items;
+    public static Image items;
     private boolean axeIsPlaced = false;
     private boolean boatIsPlaced = false;
 

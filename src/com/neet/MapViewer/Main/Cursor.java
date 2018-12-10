@@ -20,8 +20,8 @@ public class Cursor {
     public int currentCursor = 2;
 
     // Initialise the coordinate of the cursor
-    public int CursorCol;
-    public int CursorRow;
+    public static int CursorCol;
+    public static int CursorRow;
 
     private Cursor()
     {
