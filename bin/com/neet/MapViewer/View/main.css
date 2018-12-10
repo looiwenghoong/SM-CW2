@@ -5,3 +5,15 @@
     /*!*-fx-border-width: 5;*!*/
     /*-fx-border-color: black;*/
 }
+
+.shadowEffect
+{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.7), 10, 0, 0, 0);
+}
+
+.keyColour
+{
+    -fx-background-color: black;
+    -fx-border-radius: 5 5 5 5;
+    -fx-background-radius: 5 5 5 5;
+}

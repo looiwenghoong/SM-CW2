@@ -39,13 +39,16 @@
                <font>
                   <Font name="Comic Sans MS" size="14.0" />
                </font></Label>
-            <Label prefWidth="60.0" text="S (down)" GridPane.rowIndex="1">
+            <Label prefHeight="50.0" prefWidth="50.0" styleClass="keyColour" text="S " textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="90.0" left="125.0" />
                </GridPane.margin>
                <font>
-                  <Font name="Comic Sans MS Bold" size="14.0" />
+                  <Font name="Comic Sans MS Bold" size="18.0" />
                </font>
+               <padding>
+                  <Insets left="7.0" />
+               </padding>
             </Label>
             <Label prefWidth="175.0" text="PRESS 2 TO PLACE BOAT" GridPane.rowIndex="1">
                <GridPane.margin>
@@ -63,28 +66,37 @@
                   <Insets left="105.0" top="65.0" />
                </GridPane.margin>
             </Label>
-            <Label text="A (left)" GridPane.rowIndex="1">
+            <Label prefHeight="50.0" prefWidth="50.0" styleClass="keyColour" text="A" textFill="WHITE" GridPane.rowIndex="1">
                <font>
-                  <Font name="Comic Sans MS Bold" size="14.0" />
+                  <Font name="Comic Sans MS Bold" size="18.0" />
                </font>
                <GridPane.margin>
-                  <Insets bottom="90.0" left="30.0" />
-               </GridPane.margin></Label>
-            <Label text="D (right)" GridPane.rowIndex="1">
+                  <Insets bottom="90.0" left="70.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="7.0" />
+               </padding></Label>
+            <Label prefHeight="50.0" prefWidth="50.0" styleClass="keyColour" text="D " textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets bottom="90.0" left="225.0" />
+                  <Insets bottom="90.0" left="180.0" />
                </GridPane.margin>
                <font>
-                  <Font name="Comic Sans MS Bold" size="14.0" />
+                  <Font name="Comic Sans MS Bold" size="18.0" />
                </font>
+               <padding>
+                  <Insets left="7.0" />
+               </padding>
             </Label>
-            <Label prefWidth="50.0" text="W (up)" GridPane.rowIndex="1">
+            <Label prefHeight="50.0" prefWidth="50.0" styleClass="keyColour" stylesheets="@main.css" text="W" textFill="WHITE" wrapText="true" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets bottom="150.0" left="130.0" />
+                  <Insets bottom="195.0" left="110.0" />
                </GridPane.margin>
                <font>
-                  <Font name="Comic Sans MS Bold" size="14.0" />
+                  <Font name="Comic Sans MS Bold" size="18.0" />
                </font>
+               <padding>
+                  <Insets left="7.0" />
+               </padding>
             </Label>
             <Label fx:id="axeId" text="AXE: (17, 17)" GridPane.rowIndex="2">
                <GridPane.margin>
@@ -99,25 +111,17 @@
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
                <GridPane.margin>
-                  <Insets bottom="45.0" left="70.0" />
+                  <Insets bottom="35.0" left="90.0" />
                </GridPane.margin>
             </Label>
-            <Button mnemonicParsing="false" prefWidth="160.0" text="Instruction">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="20.0" />
-               </font>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadowEffect" GridPane.rowIndex="2">
+               <image>
+                  <Image url="/Sprites/cursor_normal.gif" />
+               </image>
                <GridPane.margin>
-                  <Insets left="75.0" />
+                  <Insets bottom="50.0" left="50.0" />
                </GridPane.margin>
-            </Button>
-            <Label layoutX="125.0" layoutY="118.0" minHeight="2.0" minWidth="1.0" prefHeight="2.0" prefWidth="310.0" style="-fx-background-color: #000000;" GridPane.rowIndex="1">
-               <font>
-                  <Font name="Comic Sans MS" size="14.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets bottom="280.0" />
-               </GridPane.margin>
-            </Label>
+            </ImageView>
             <ImageView fx:id="axeContainer" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                <image>
                   <Image url="/Sprites/axe.png" />
@@ -134,7 +138,7 @@
                   <Insets left="35.0" top="190.0" />
                </GridPane.margin>
             </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadowEffect" GridPane.rowIndex="2">
                <image>
                   <Image url="/Sprites/axe.png" />
                </image>
@@ -142,7 +146,7 @@
                   <Insets left="20.0" top="75.0" />
                </GridPane.margin>
             </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadowEffect" GridPane.rowIndex="2">
                <image>
                   <Image url="/Sprites/boat.png" />
                </image>
@@ -150,6 +154,46 @@
                   <Insets left="150.0" top="75.0" />
                </GridPane.margin>
             </ImageView>
+            <Label prefHeight="200.0" prefWidth="310.0" style="-fx-background-color: #000000;" text="--INSTRUCTION--" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="22.0" />
+               </font>
+               <padding>
+                  <Insets left="47.0" />
+               </padding>
+            </Label>
+            <Label text="Up" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="195.0" left="80.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Left" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="90.0" left="30.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Down" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="20.0" left="125.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Right" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="90.0" left="240.0" />
+               </GridPane.margin>
+            </Label>
          </children>
       </GridPane>
    </right>
