@@ -14,7 +14,12 @@ import javafx.scene.control.Button;
 
 public class MapMain extends Application {
 
+    public static TileMapViewer mapViewer;
     public static Stage primaryStage;
+
+    // Variable to be used in the playstate to determine if this map viewer application is launched
+    public static boolean appLauncher = false;
+
     public BorderPane rootLayout;
     public TilePane mapLayout;
 
@@ -56,9 +61,9 @@ public class MapMain extends Application {
 //    Function to show the map
     public void initMapLayout()
     {
-        TileMapViewer mapViewer = new TileMapViewer();
+        mapViewer = TileMapViewer.getInstance();
         mapViewer.loadMap("/Maps/testmap.map");
-        mapViewer.loadImages("/Tilesets/testtileset.gif");
+        mapViewer.loadImages("/Tilesets/testtileset.gif", "/Sprites/items.gif");
         mapViewer.initMapCanvas();
         try
         {
@@ -75,7 +80,7 @@ public class MapMain extends Application {
         // Set the number of columns and rows for the tilepane map layout
         mapLayout.setPrefColumns(mapViewer.numCols);
         mapLayout.setPrefRows(mapViewer.numRows);
-        mapLayout.getChildren().add(mapViewer.mainCanvas);
+        mapLayout.getChildren().add(mapViewer.currentCanvas);
         rootLayout.setCenter(mapLayout);
     }
 
