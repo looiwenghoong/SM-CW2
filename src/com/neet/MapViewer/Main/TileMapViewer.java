@@ -12,7 +12,7 @@ public class TileMapViewer {
 
     private static TileMapViewer mapViewer = null;
 
-    public Cursor cursor;
+    public static Cursor cursor;
 
     public int numCols;
     public int numRows;
