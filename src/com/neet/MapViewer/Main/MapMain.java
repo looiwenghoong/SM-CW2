@@ -1,12 +1,12 @@
 package com.neet.MapViewer.Main;
 
+import com.neet.MapViewer.View.MainController;
+import com.sun.tools.javac.Main;
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
@@ -23,6 +23,8 @@ public class MapMain extends Application {
 
     public BorderPane rootLayout;
     public TilePane mapLayout;
+
+    static MainController controller;
 
     public static void main(String[] args) {
         launch(args);
@@ -48,7 +50,12 @@ public class MapMain extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MapMain.class.getResource("/com/neet/MapViewer/View/RootLayout.fxml"));
 
+            // Load the rootlayout by casting it to BorderPane
             rootLayout = (BorderPane)loader.load();
+
+            // Get the controller associate with the rootlayout
+            controller = (MainController)loader.getController();
+            controller.tryThis();
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setResizable(false);
