@@ -139,7 +139,7 @@
                   <Insets left="35.0" top="190.0" />
                </GridPane.margin>
             </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadowEffect" GridPane.rowIndex="3">
+            <ImageView fx:id="axeImage" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadowEffect" GridPane.rowIndex="3">
                <image>
                   <Image url="/Sprites/axe.png" />
                </image>
@@ -147,7 +147,7 @@
                   <Insets left="20.0" top="75.0" />
                </GridPane.margin>
             </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadowEffect" GridPane.rowIndex="3">
+            <ImageView fx:id="boatImage" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadowEffect" GridPane.rowIndex="3">
                <image>
                   <Image url="/Sprites/boat.png" />
                </image>
