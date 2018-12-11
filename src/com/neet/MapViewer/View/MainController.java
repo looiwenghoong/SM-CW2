@@ -4,8 +4,6 @@ import com.neet.DiamondHunter.Main.Game;
 import com.neet.MapViewer.Main.Cursor;
 import com.neet.MapViewer.Main.MapMain;
 import javafx.animation.PathTransition;
-import javafx.animation.PauseTransition;
-import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -19,7 +17,7 @@ import javafx.util.Duration;
 public class MainController {
 
     @FXML
-    public Label boatId, axeId, cursorId;
+    public Label boatId, axeId, cursorId, upButton, downButton, leftButton, rightButton;
 
     @FXML
     public ImageView axeImage, boatImage;
@@ -30,24 +28,32 @@ public class MainController {
         //press W key to move the cursor upwards
         if(event.getCode() == KeyCode.W || event.getCode() == KeyCode.UP) {
             Cursor.cursorMovement(1);
+            upButton.setScaleX(0.9);
+            upButton.setScaleY(0.9);
             cursorId.setText("CURSOR: (" + Cursor.CursorRow + ", " + Cursor.CursorCol + ")");
         }
 
         //press S key to move the cursor downwards
         else if(event.getCode() == KeyCode.S || event.getCode() == KeyCode.DOWN) {
             Cursor.cursorMovement(2);
+            downButton.setScaleX(0.9);
+            downButton.setScaleY(0.9);
             cursorId.setText("CURSOR: (" + Cursor.CursorRow + ", " + Cursor.CursorCol + ")");
         }
 
         //press A key to move the cursor to the left
         else if(event.getCode() == KeyCode.A || event.getCode() == KeyCode.LEFT) {
             Cursor.cursorMovement(3);
+            leftButton.setScaleX(0.9);
+            leftButton.setScaleY(0.9);
             cursorId.setText("CURSOR: (" + Cursor.CursorRow + ", " + Cursor.CursorCol + ")");
         }
 
         //press D key to move the cursor to the right
         else if(event.getCode() == KeyCode.D || event.getCode() == KeyCode.RIGHT) {
             Cursor.cursorMovement(4);
+            rightButton.setScaleX(0.9);
+            rightButton.setScaleY(0.9);
             cursorId.setText("CURSOR: (" + Cursor.CursorRow + ", " + Cursor.CursorCol + ")");
         }
 
@@ -63,16 +69,32 @@ public class MainController {
             MapMain.primaryStage.hide();
             Game.main(null);
         }
-        else if(event.getCode() == KeyCode.ENTER)
-        {
-            MapMain.primaryStage.hide();
-            Game.main(null);
-        }
-
     }
 
     @FXML
     public void handleSetItem (KeyEvent event) {
+
+        // When the key is released, it will return to its normal size
+        if(event.getCode() == KeyCode.W) {
+            upButton.setScaleX(1);
+            upButton.setScaleY(1);
+        }
+
+        else if(event.getCode() == KeyCode.S) {
+            downButton.setScaleX(1);
+            downButton.setScaleY(1);
+        }
+
+        else if(event.getCode() == KeyCode.A) {
+            leftButton.setScaleX(1);
+            leftButton.setScaleY(1);
+        }
+
+        else if(event.getCode() == KeyCode.D) {
+            rightButton.setScaleX(1);
+            rightButton.setScaleY(1);
+        }
+
         //press 1 to place the axe
         if(event.getCode() == KeyCode.DIGIT1) {
             MapMain.mapViewer.setItem(1);
