@@ -132,20 +132,20 @@
                   <Insets bottom="50.0" left="50.0" />
                </GridPane.margin>
             </ImageView>
-            <ImageView fx:id="axeContainer" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+            <ImageView fx:id="axeContainer" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                <image>
                   <Image url="/Sprites/axe.png" />
                </image>
                <GridPane.margin>
-                  <Insets left="50.0" top="190.0" />
+                  <Insets left="115.0" top="80.0" />
                </GridPane.margin>
             </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                <image>
                   <Image url="/Sprites/boat.png" />
                </image>
                <GridPane.margin>
-                  <Insets left="35.0" top="190.0" />
+                  <Insets left="258.0" top="80.0" />
                </GridPane.margin>
             </ImageView>
             <ImageView fx:id="axeImage" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadowEffect" GridPane.rowIndex="3">
@@ -209,7 +209,7 @@
                   <Insets />
                </GridPane.margin>
             </Label>
-            <Label text="Place Axe" GridPane.rowIndex="1">
+            <Label text="Place" GridPane.rowIndex="1">
                <font>
                   <Font name="Comic Sans MS Bold" size="14.0" />
                </font>
@@ -217,7 +217,7 @@
                   <Insets left="80.0" top="85.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Place Boat" GridPane.rowIndex="1">
+            <Label text="Place" GridPane.rowIndex="1">
                <font>
                   <Font name="Comic Sans MS Bold" size="14.0" />
                </font>
