@@ -3,6 +3,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -11,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPressed" onKeyReleased="#handleSetItem" prefHeight="640.0" prefWidth="951.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neet.MapViewer.View.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPressed" onKeyReleased="#handleSetItem" prefHeight="669.0" prefWidth="951.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neet.MapViewer.View.MainController">
    <right>
       <GridPane prefWidth="310.0" styleClass="grid" stylesheets="@main.css" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -33,7 +36,7 @@
                   <Insets left="55.0" />
                </GridPane.margin>
             </Button>
-            <Label fx:id="boatId" prefHeight="50.0" prefWidth="100.0" text="BOAT: (17, 17)" wrapText="true" GridPane.rowIndex="3">
+            <Label fx:id="boatId" prefHeight="50.0" prefWidth="100.0" text="BOAT: NULL" wrapText="true" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="185.0" top="75.0" />
                </GridPane.margin>
@@ -51,21 +54,27 @@
                   <Insets left="7.0" />
                </padding>
             </Label>
-            <Label prefWidth="175.0" text="PRESS 2 TO PLACE BOAT" GridPane.rowIndex="1">
+            <Label fx:id="boatButton" prefHeight="50.0" prefWidth="50.0" styleClass="keyColour" text="2" textFill="WHITE" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="103.5" top="190.0" />
+                  <Insets left="160.0" top="85.0" />
                </GridPane.margin>
                <font>
-                  <Font name="Comic Sans MS" size="14.0" />
+                  <Font name="Comic Sans MS" size="18.0" />
                </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
             </Label>
-            <Label prefWidth="160.0" text="PRESS 1 TO PLACE AXE" GridPane.rowIndex="1">
+            <Label fx:id="axeButton" prefHeight="50.0" prefWidth="50.0" styleClass="keyColour" text="1" textFill="WHITE" GridPane.rowIndex="1">
                <font>
-                  <Font name="Comic Sans MS" size="14.0" />
+                  <Font name="Comic Sans MS" size="18.0" />
                </font>
                <GridPane.margin>
-                  <Insets left="105.0" top="65.0" />
+                  <Insets left="20.0" top="85.0" />
                </GridPane.margin>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
             </Label>
             <Label fx:id="leftButton" prefHeight="50.0" prefWidth="50.0" styleClass="keyColour" text="A" textFill="WHITE" GridPane.rowIndex="1">
                <font>
@@ -99,7 +108,7 @@
                   <Insets left="7.0" />
                </padding>
             </Label>
-            <Label fx:id="axeId" text="AXE: (17, 17)" GridPane.rowIndex="3">
+            <Label fx:id="axeId" text="AXE: NULL" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="55.0" top="75.0" />
                </GridPane.margin>
@@ -112,10 +121,10 @@
                   <Font name="Comic Sans MS" size="14.0" />
                </font>
                <GridPane.margin>
-                  <Insets bottom="50.0" left="90.0" />
+                  <Insets bottom="60.0" left="90.0" />
                </GridPane.margin>
             </Label>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadowEffect" GridPane.rowIndex="3">
+            <ImageView fx:id="cursorImage" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadowEffect" GridPane.rowIndex="3">
                <image>
                   <Image url="/Sprites/cursor_normal.gif" />
                </image>
@@ -128,7 +137,7 @@
                   <Image url="/Sprites/axe.png" />
                </image>
                <GridPane.margin>
-                  <Insets left="35.0" top="65.0" />
+                  <Insets left="50.0" top="190.0" />
                </GridPane.margin>
             </ImageView>
             <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
@@ -200,7 +209,44 @@
                   <Insets />
                </GridPane.margin>
             </Label>
+            <Label text="Place Axe" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="80.0" top="85.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Place Boat" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="220.0" top="85.0" />
+               </GridPane.margin>
+            </Label>
          </children>
       </GridPane>
    </right>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
 </BorderPane>

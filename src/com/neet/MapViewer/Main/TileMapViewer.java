@@ -228,12 +228,14 @@ public class TileMapViewer {
 
     private int checkItemPlaced(boolean itemCondition, int itemRow, int itemCol)
     {
+        // If the item is not placed yet
         if(itemCondition)
         {
             replaceToOriginal(itemCol, itemRow);
             tileType[itemRow][itemCol] = 0;
             return 2;
         }
+        // If the item position is updated
         else
         {
             return 0;
@@ -248,6 +250,7 @@ public class TileMapViewer {
 
         replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
 
+        // Invalid Position of placing the item
         if (tileType[cursor.CursorRow][cursor.CursorCol] == 1) {
             handleType = 1;
         }

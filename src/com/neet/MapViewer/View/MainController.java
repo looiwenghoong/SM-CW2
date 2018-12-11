@@ -17,10 +17,10 @@ import javafx.util.Duration;
 public class MainController {
 
     @FXML
-    public Label boatId, axeId, cursorId, upButton, downButton, leftButton, rightButton;
+    public Label boatId, axeId, cursorId, upButton, downButton, leftButton, rightButton, axeButton, boatButton;
 
     @FXML
-    public ImageView axeImage, boatImage;
+    public ImageView axeImage, boatImage, cursorImage;
 
     @FXML
     public void handleKeyPressed (KeyEvent event) {
@@ -59,9 +59,13 @@ public class MainController {
 
         else if(event.getCode() == KeyCode.DIGIT1) {
             Cursor.turnOnCursorColour();
+            axeButton.setScaleX(0.9);
+            axeButton.setScaleY(0.9);
         }
 
         else if(event.getCode() == KeyCode.DIGIT2) {
+            boatButton.setScaleX(0.9);
+            boatButton.setScaleY(0.9);
             Cursor.turnOnCursorColour();
         }
 
@@ -73,6 +77,7 @@ public class MainController {
 
     @FXML
     public void handleSetItem (KeyEvent event) {
+        int setStatus;
 
         // When the key is released, it will return to its normal size
         if(event.getCode() == KeyCode.W) {
@@ -97,19 +102,35 @@ public class MainController {
 
         //press 1 to place the axe
         if(event.getCode() == KeyCode.DIGIT1) {
-            MapMain.mapViewer.setItem(1);
+            setStatus = MapMain.mapViewer.setItem(1);
+            axeButton.setScaleX(1);
+            axeButton.setScaleY(1);
             axeId.setText("AXE: (" + MapMain.mapViewer.getAxeRow() + ", " + MapMain.mapViewer.getAxeCol() + ")");
         }
 
         //press 2 to place the boat
         if(event.getCode() == KeyCode.DIGIT2) {
             MapMain.mapViewer.setItem(2);
+            boatButton.setScaleX(1);
+            boatButton.setScaleY(1);
             boatId.setText("BOAT: (" + MapMain.mapViewer.getBoatRow() + ", " + MapMain.mapViewer.getBoatCol() + ")");
         }
     }
 
     public void tryThis()
     {
+        Path cursorPath = new Path();
+        cursorPath.getElements().add(new MoveTo(45,7));
+        cursorPath.getElements().add(new VLineTo(12));
+        cursorPath.getElements().add(new ClosePath());
+
+        PathTransition cursorPathTransition = new PathTransition();
+        cursorPathTransition.setDuration(Duration.millis(1500));
+        cursorPathTransition.setNode(cursorImage);
+        cursorPathTransition.setPath(cursorPath);
+        cursorPathTransition.setCycleCount(PathTransition.INDEFINITE);
+        cursorPathTransition.play();
+
         Path sBoatPath = new Path();
         sBoatPath.getElements().add(new MoveTo(15, 15));
         sBoatPath.getElements().add(new VLineTo(10));
