@@ -164,7 +164,7 @@
                   <Insets left="150.0" top="75.0" />
                </GridPane.margin>
             </ImageView>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="150.0" prefWidth="310.0" style="-fx-background-color: #000000;" text="INSTRUCTION" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+            <Label fx:id="closeButton" alignment="CENTER" contentDisplay="CENTER" prefHeight="150.0" prefWidth="310.0" style="-fx-background-color: #000000;" text="INSTRUCTION" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Chalkduster" size="22.0" />
                </font>
