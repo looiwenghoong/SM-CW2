@@ -1,9 +1,6 @@
 .grid
 {
     -fx-background-color: white;
-    /*!*-fx-border-style: solid;*!*/
-    /*!*-fx-border-width: 5;*!*/
-    /*-fx-border-color: black;*/
 }
 
 .shadowEffect

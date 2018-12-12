@@ -28,8 +28,8 @@ public class MainController {
     @FXML
     public Label boatId, axeId, cursorId, upButton, downButton, leftButton, rightButton, axeButton, boatButton;
 
-    @FXML
-    public MenuItem aboutUs;
+//    @FXML
+//    public MenuItem aboutUs;
 
     @FXML
     public ImageView axeImage, boatImage, cursorImage;
@@ -170,26 +170,26 @@ public class MainController {
 
     }
 
-    public void displayAlertBox() {
-        Stage window = new Stage();
-
-        window.initModality(Modality.APPLICATION_MODAL);
-        window.setTitle("About Us");
-        window.setMinWidth(400);
-
-        Label label = new Label();
-        label.setText("Hello World");
-
-        Button closeButton = new Button("Close the window");
-        closeButton.setOnAction(e -> window.close());
-
-        VBox layout = new VBox();
-        layout.getChildren().addAll(label, closeButton);
-        layout.setAlignment(Pos.CENTER);
-
-        Scene scene = new Scene(layout);
-        window.setScene(scene);
-        //the alert box will show and wait for it to be closed before returning to the caller window
-        window.showAndWait();
-    }
+//    public void displayAlertBox() {
+//        Stage window = new Stage();
+//
+//        window.initModality(Modality.APPLICATION_MODAL);
+//        window.setTitle("About Us");
+//        window.setMinWidth(500);
+//
+//        Label label = new Label();
+//        label.setText("//");
+//
+//        Button closeButton = new Button("Close the window");
+//        closeButton.setOnAction(e -> window.close());
+//
+//        VBox layout = new VBox();
+//        layout.getChildren().addAll(label, closeButton);
+//        layout.setAlignment(Pos.CENTER);
+//
+//        Scene scene = new Scene(layout);
+//        window.setScene(scene);
+//        //the alert box will show and wait for it to be closed before returning to the caller window
+//        window.showAndWait();
+//    }
 }
