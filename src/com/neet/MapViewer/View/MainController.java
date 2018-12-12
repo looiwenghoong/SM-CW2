@@ -114,7 +114,7 @@ public class MainController {
 
         //press 1 to place the axe
         if(event.getCode() == KeyCode.DIGIT1) {
-            setStatus = MapMain.mapViewer.setItem(1);
+            MapMain.mapViewer.setItem(1);
             axeButton.setScaleX(1);
             axeButton.setScaleY(1);
             axeId.setText("AXE: (" + MapMain.mapViewer.getAxeRow() + ", " + MapMain.mapViewer.getAxeCol() + ")");
@@ -129,10 +129,10 @@ public class MainController {
         }
     }
 
-    public void tryThis()
+    public void setAnimation()
     {
         Path cursorPath = new Path();
-        cursorPath.getElements().add(new MoveTo(45,7));
+        cursorPath.getElements().add(new MoveTo(25,7));
         cursorPath.getElements().add(new VLineTo(12));
         cursorPath.getElements().add(new ClosePath());
 
@@ -169,27 +169,4 @@ public class MainController {
         sAxePathTransition.play();
 
     }
-
-//    public void displayAlertBox() {
-//        Stage window = new Stage();
-//
-//        window.initModality(Modality.APPLICATION_MODAL);
-//        window.setTitle("About Us");
-//        window.setMinWidth(500);
-//
-//        Label label = new Label();
-//        label.setText("//");
-//
-//        Button closeButton = new Button("Close the window");
-//        closeButton.setOnAction(e -> window.close());
-//
-//        VBox layout = new VBox();
-//        layout.getChildren().addAll(label, closeButton);
-//        layout.setAlignment(Pos.CENTER);
-//
-//        Scene scene = new Scene(layout);
-//        window.setScene(scene);
-//        //the alert box will show and wait for it to be closed before returning to the caller window
-//        window.showAndWait();
-//    }
 }

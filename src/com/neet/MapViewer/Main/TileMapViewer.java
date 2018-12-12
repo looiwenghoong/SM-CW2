@@ -37,10 +37,10 @@ public class TileMapViewer {
     /*
     * Variables for setting the items, boat and axe
     */
-    private int boatRow = -1;
-    private int boatCol = -1;
-    private int axeRow = -1;
-    private int axeCol = -1;
+    private int boatRow = 12;
+    private int boatCol = 4;
+    private int axeRow = 26;
+    private int axeCol = 37;
 
     public int getBoatRow() {
         return boatRow;
@@ -164,6 +164,21 @@ public class TileMapViewer {
 
         originalImage = mainCanvas.snapshot(null, null);
         drawCursorToMain();
+        int axe = 1;
+        currentCanvas.getGraphicsContext2D().drawImage(
+                items,
+                axe * tileSize, tileSize, tileSize, tileSize,
+                axeCol * tileSize,
+                axeRow * tileSize,
+                tileSize, tileSize);
+
+        int boat = 0;
+        currentCanvas.getGraphicsContext2D().drawImage(
+                items,
+                boat * tileSize, tileSize, tileSize, tileSize,
+                boatCol * tileSize,
+                boatRow * tileSize,
+                tileSize, tileSize);
         currentCanvas.getGraphicsContext2D().drawImage(
                 cursor.imageArray[cursor.currentCursor], 0, 0, tileSize, tileSize,
                 cursor.CursorCol * tileSize, cursor.CursorRow * tileSize,
@@ -204,8 +219,6 @@ public class TileMapViewer {
 
     public void drawitem()
     {
-        if(axeIsPlaced)
-        {
             int axe = 1;
             mainCanvas.getGraphicsContext2D().drawImage(
                     items,
@@ -213,9 +226,7 @@ public class TileMapViewer {
                     axeCol * tileSize,
                     axeRow * tileSize,
                     tileSize, tileSize);
-        }
-        if (boatIsPlaced)
-        {
+
             int boat = 0;
             mainCanvas.getGraphicsContext2D().drawImage(
                     items,
@@ -223,23 +234,13 @@ public class TileMapViewer {
                     boatCol * tileSize,
                     boatRow * tileSize,
                     tileSize, tileSize);
-        }
     }
 
-    private int checkItemPlaced(boolean itemCondition, int itemRow, int itemCol)
+    private int checkItemPlaced(int itemRow, int itemCol)
     {
-        // If the item is not placed yet
-        if(itemCondition)
-        {
             replaceToOriginal(itemCol, itemRow);
             tileType[itemRow][itemCol] = 0;
             return 2;
-        }
-        // If the item position is updated
-        else
-        {
-            return 0;
-        }
     }
 
     public int setItem(int itemType)
@@ -259,16 +260,14 @@ public class TileMapViewer {
             switch (itemType)
             {
                 case 1:
-                    handleType = checkItemPlaced(axeIsPlaced, axeRow, axeCol);
-                    axeIsPlaced = true;
+                    handleType = checkItemPlaced(axeRow, axeCol);
                     tileType[cursor.CursorRow][cursor.CursorCol] = 1;
 
                     axeRow = cursor.CursorRow;
                     axeCol = cursor.CursorCol;
                     break;
                 case 2:
-                    handleType = checkItemPlaced(boatIsPlaced, boatRow, boatCol);
-                    boatIsPlaced = true;
+                    handleType = checkItemPlaced(boatRow, boatCol);
                     tileType[cursor.CursorRow][cursor.CursorCol] = 1;
 
                     boatRow = cursor.CursorRow;

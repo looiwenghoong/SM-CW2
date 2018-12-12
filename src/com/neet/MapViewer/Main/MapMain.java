@@ -55,7 +55,7 @@ public class MapMain extends Application {
 
             // Get the controller associate with the rootlayout
             controller = (MainController) loader.getController();
-            controller.tryThis();
+            controller.setAnimation();
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setResizable(false);
