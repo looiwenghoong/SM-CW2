@@ -25,7 +25,7 @@ import javafx.stage.Stage;
 public class MainController {
 
     @FXML
-    public Label boatId, axeId, cursorId, upButton, downButton, leftButton, rightButton, axeButton, boatButton;
+    public Label boatId, axeId, cursorId, upButton, downButton, leftButton, rightButton, axeButton, boatButton, aboutUs;
 
     @FXML
     public ImageView axeImage, boatImage, cursorImage;
