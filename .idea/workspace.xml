@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="65fe26ca-938c-4716-a8c3-c0a4d08373e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/neet/MapViewer/View/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/MapViewer/View/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/neet/MapViewer/View/RootLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/MapViewer/View/RootLayout.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -354,7 +352,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544615259423" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544615802167" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -449,11 +447,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81932000" />
+    <option name="totallyTimeSpent" value="82403000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1137339" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -464,14 +461,14 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49499285" visible="true" weight="0.24939759" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49499285" weight="0.24939759" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49570817" weight="0.2879518" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49570817" visible="true" weight="0.28674698" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50500715" side_tool="true" weight="0.24939759" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49861497" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />

@@ -203,7 +203,7 @@
             </Label>
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="200.0" prefWidth="310.0" style="-fx-background-color: #000000;" text="COORDINATES" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" GridPane.rowIndex="2">
                <font>
-                  <Font name="Comic Sans MS Bold" size="22.0" />
+                  <Font name="Chalkduster" size="22.0" />
                </font>
                <GridPane.margin>
                   <Insets />
