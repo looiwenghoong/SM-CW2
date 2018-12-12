@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPressed" onKeyReleased="#handleSetItem" prefHeight="669.0" prefWidth="951.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neet.MapViewer.View.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPressed" onKeyReleased="#handleSetItem" prefHeight="669.0" prefWidth="951.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neet.MapViewer.View.MainController">
    <right>
       <GridPane prefWidth="310.0" styleClass="grid" stylesheets="@main.css" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -233,12 +233,12 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem fx:id="closeButton" mnemonicParsing="false" text="Close" />
+              <MenuItem fx:id="closeButtonMenu" mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem fx:id="aboutUs" mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="aboutUs" mnemonicParsing="false" onAction="#displayAlertBox" text="About" />
             </items>
           </Menu>
         </menus>

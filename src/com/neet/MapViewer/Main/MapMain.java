@@ -1,16 +1,18 @@
 package com.neet.MapViewer.Main;
 
 import com.neet.MapViewer.View.MainController;
-import com.sun.tools.javac.Main;
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.io.IOException;
 
 
 public class MapMain extends Application {
@@ -42,19 +44,17 @@ public class MapMain extends Application {
         appLauncher = true;
     }
 
-//    Function to init the root view
-    public void initRootView()
-    {
-        try
-        {
+    //    Function to init the root view
+    public void initRootView() {
+        try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MapMain.class.getResource("/com/neet/MapViewer/View/RootLayout.fxml"));
 
             // Load the rootlayout by casting it to BorderPane
-            rootLayout = (BorderPane)loader.load();
+            rootLayout = (BorderPane) loader.load();
 
             // Get the controller associate with the rootlayout
-            controller = (MainController)loader.getController();
+            controller = (MainController) loader.getController();
             controller.tryThis();
 
             Scene scene = new Scene(rootLayout);
@@ -63,29 +63,23 @@ public class MapMain extends Application {
             primaryStage.show();
 
             fadeAnimation();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-//    Function to show the map
-    public void initMapLayout()
-    {
+    //    Function to show the map
+    public void initMapLayout() {
         mapViewer = TileMapViewer.getInstance();
         mapViewer.loadMap("/Maps/testmap.map");
         mapViewer.loadImages("/Tilesets/testtileset.gif", "/Sprites/items.gif");
         mapViewer.initMapCanvas();
-        try
-        {
+        try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MapMain.class.getResource("/com/neet/MapViewer/View/MapLayout.fxml"));
 
-            mapLayout = (TilePane)loader.load();
-        }
-        catch (Exception e)
-        {
+            mapLayout = (TilePane) loader.load();
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -96,8 +90,7 @@ public class MapMain extends Application {
         rootLayout.setCenter(mapLayout);
     }
 
-    public void fadeAnimation()
-    {
+    public void fadeAnimation() {
         FadeTransition ft = new FadeTransition(Duration.millis(5000), rootLayout);
         ft.setFromValue(0);
         ft.setToValue(1.0);
