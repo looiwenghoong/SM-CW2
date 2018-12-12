@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="65fe26ca-938c-4716-a8c3-c0a4d08373e5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/MapViewer/View/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/MapViewer/View/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/MapViewer/View/RootLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/MapViewer/View/RootLayout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/neet/MapViewer/View/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/neet/MapViewer/View/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/neet/MapViewer/View/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/MapViewer/View/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/neet/MapViewer/View/RootLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/MapViewer/View/RootLayout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/neet/MapViewer/View/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/MapViewer/View/main.css" afterDir="false" />
-    </list>
+    <list default="true" id="65fe26ca-938c-4716-a8c3-c0a4d08373e5" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -441,12 +433,12 @@
       <workItem from="1544450183179" duration="3880000" />
       <workItem from="1544618577892" duration="1648000" />
       <workItem from="1544621719450" duration="172000" />
-      <workItem from="1544621895298" duration="1211000" />
+      <workItem from="1544621895298" duration="1506000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86623000" />
+    <option name="totallyTimeSpent" value="86918000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
