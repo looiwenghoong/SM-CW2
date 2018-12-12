@@ -6,6 +6,7 @@ import com.neet.MapViewer.Main.MapMain;
 import javafx.animation.PathTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -26,6 +27,9 @@ public class MainController {
 
     @FXML
     public Label boatId, axeId, cursorId, upButton, downButton, leftButton, rightButton, axeButton, boatButton;
+
+    @FXML
+    public MenuItem aboutUs;
 
     @FXML
     public ImageView axeImage, boatImage, cursorImage;
@@ -166,7 +170,7 @@ public class MainController {
 
     }
 
-    public static void displayAlertBox(String title, String message) {
+    public void displayAlertBox() {
         Stage window = new Stage();
 
         window.initModality(Modality.APPLICATION_MODAL);
@@ -174,7 +178,7 @@ public class MainController {
         window.setMinWidth(400);
 
         Label label = new Label();
-        label.setText(message);
+        label.setText("Hello World");
 
         Button closeButton = new Button("Close the window");
         closeButton.setOnAction(e -> window.close());
