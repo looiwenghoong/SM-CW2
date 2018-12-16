@@ -8,13 +8,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
-import java.io.IOException;
-
 
 public class MapMain extends Application {
 
@@ -41,11 +37,14 @@ public class MapMain extends Application {
         Platform.setImplicitExit(false);
         initRootView();
         initMapLayout();
+        initDialogBox();
 
         appLauncher = true;
     }
 
-    // Function to init the root view
+    /**
+     * Function to init the root view
+     */
     public void initRootView() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -69,7 +68,9 @@ public class MapMain extends Application {
         }
     }
 
-    // Function to show the map
+    /**
+     * Function to show the map
+     */
     public void initMapLayout() {
         mapViewer = TileMapViewer.getInstance();
         mapViewer.loadMap("/Maps/testmap.map");
@@ -91,7 +92,9 @@ public class MapMain extends Application {
         rootLayout.setCenter(mapLayout);
     }
 
-    // The fading animation function
+    /**
+     * The fading animation function
+     */
     public void fadeAnimation() {
         FadeTransition ft = new FadeTransition(Duration.millis(5000), rootLayout);
         ft.setFromValue(0);
@@ -105,10 +108,20 @@ public class MapMain extends Application {
     private void initDialogBox()
     {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText("Look, an Information Dialog");
-        alert.setContentText("I have a great message for you!");
+        alert.setTitle("Map Viewer for Diamond Hunter Version 1.0");
+        alert.setHeaderText("Map Viewer User Guideline");
+        alert.setContentText("Instruction for using Diamond Hunter Map Viewer\n\n"
+                + "W/A/S/D to move the cursor to place the items on the map.\n"
+                + "Press ENTER to navigate to the game.\n\n"
+                + "1) The default location of the axe and boat are as specified where AXE (37, 26) & BOAT (12, 4).\n"
+                + "2) If You choose not to place the boat and axe, the default location will be used for setting the axe and the boat.\n\n"
+                + "NOTICE: When you press `1` or `2` (not yet release), "
+                + "you will find the cursor color automatically change to red/green "
+                + "so that you know whether the position is available to you."
+                + "During your press, you can move the cursor to find a position you would like to set the item up. "
+                + "Once you decided, release the key.\n");
 
         alert.showAndWait();
+        alert.setOnCloseRequest(event -> {alert.close();});
     }
 }

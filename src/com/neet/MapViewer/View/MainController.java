@@ -6,28 +6,17 @@ import com.neet.MapViewer.Main.MapMain;
 import javafx.animation.PathTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-
 import javafx.scene.shape.*;
 import javafx.util.Duration;
-
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-
 
 public class MainController {
 
     // Labels
     @FXML
-    public Label boatId, axeId, cursorId, upButton, downButton, leftButton, rightButton, axeButton, boatButton;
+    public Label boatId, axeId, cursorId, upButton, downButton, leftButton, rightButton, axeButton, boatButton, enterButton;
 
     // Image view
     @FXML
@@ -87,6 +76,8 @@ public class MainController {
         // Press Enter to proceed to the game
         else if(event.getCode() == KeyCode.ENTER) {
             MapMain.primaryStage.hide();
+            enterButton.setScaleX(0.9);
+            enterButton.setScaleY(0.9);
             Game.main(null);
         }
     }
