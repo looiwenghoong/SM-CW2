@@ -25,20 +25,21 @@ import javafx.stage.Stage;
 
 public class MainController {
 
+    // Labels
     @FXML
     public Label boatId, axeId, cursorId, upButton, downButton, leftButton, rightButton, axeButton, boatButton;
 
-//    @FXML
-//    public MenuItem aboutUs;
-
+    // Image view
     @FXML
     public ImageView axeImage, boatImage, cursorImage;
 
+    // This function is mainly used to handle some key event when a key is pressed
+    // Operations such as move the cursor, check the validity of the position to place the item and Enter the game
     @FXML
     public void handleKeyPressed (KeyEvent event) {
 
         //press W key to move the cursor upwards
-        if(event.getCode() == KeyCode.W || event.getCode() == KeyCode.UP) {
+        if(event.getCode() == KeyCode.W) {
             Cursor.cursorMovement(1);
             upButton.setScaleX(0.9);
             upButton.setScaleY(0.9);
@@ -46,7 +47,7 @@ public class MainController {
         }
 
         //press S key to move the cursor downwards
-        else if(event.getCode() == KeyCode.S || event.getCode() == KeyCode.DOWN) {
+        else if(event.getCode() == KeyCode.S) {
             Cursor.cursorMovement(2);
             downButton.setScaleX(0.9);
             downButton.setScaleY(0.9);
@@ -54,7 +55,7 @@ public class MainController {
         }
 
         //press A key to move the cursor to the left
-        else if(event.getCode() == KeyCode.A || event.getCode() == KeyCode.LEFT) {
+        else if(event.getCode() == KeyCode.A) {
             Cursor.cursorMovement(3);
             leftButton.setScaleX(0.9);
             leftButton.setScaleY(0.9);
@@ -62,31 +63,36 @@ public class MainController {
         }
 
         //press D key to move the cursor to the right
-        else if(event.getCode() == KeyCode.D || event.getCode() == KeyCode.RIGHT) {
+        else if(event.getCode() == KeyCode.D) {
             Cursor.cursorMovement(4);
             rightButton.setScaleX(0.9);
             rightButton.setScaleY(0.9);
             cursorId.setText("CURSOR: (" + Cursor.CursorRow + ", " + Cursor.CursorCol + ")");
         }
 
+        // press 1 for axe operation to check if the position is a valid position to insert the axe
         else if(event.getCode() == KeyCode.DIGIT1) {
-            Cursor.turnOnCursorColour();
             axeButton.setScaleX(0.9);
             axeButton.setScaleY(0.9);
+            Cursor.turnOnCursorColour();
         }
 
+        // press 2 for boat operation to check if the position is a valid position to insert the boat
         else if(event.getCode() == KeyCode.DIGIT2) {
             boatButton.setScaleX(0.9);
             boatButton.setScaleY(0.9);
             Cursor.turnOnCursorColour();
         }
 
+        // Press Enter to proceed to the game
         else if(event.getCode() == KeyCode.ENTER) {
             MapMain.primaryStage.hide();
             Game.main(null);
         }
     }
 
+    // This function is mainly used to set the items onto the map when there are key events
+    // This function will be triggered when the key is released
     @FXML
     public void handleSetItem (KeyEvent event) {
         int setStatus;
@@ -129,8 +135,10 @@ public class MainController {
         }
     }
 
+    // Set animation function that will be called when upon startup to animate the labels
     public void setAnimation()
     {
+        // Animation for cursor label
         Path cursorPath = new Path();
         cursorPath.getElements().add(new MoveTo(25,7));
         cursorPath.getElements().add(new VLineTo(12));
@@ -143,6 +151,7 @@ public class MainController {
         cursorPathTransition.setCycleCount(PathTransition.INDEFINITE);
         cursorPathTransition.play();
 
+        // Animation for boat label
         Path sBoatPath = new Path();
         sBoatPath.getElements().add(new MoveTo(15, 15));
         sBoatPath.getElements().add(new VLineTo(10));
@@ -155,7 +164,7 @@ public class MainController {
         sBoatPathTransition.setCycleCount(PathTransition.INDEFINITE);
         sBoatPathTransition.play();
 
-
+        // Animation for axe label
         Path sAxePath = new Path();
         sAxePath.getElements().add(new MoveTo(0, 15));
         sAxePath.getElements().add(new VLineTo(10));

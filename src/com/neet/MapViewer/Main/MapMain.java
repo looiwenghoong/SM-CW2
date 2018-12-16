@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
@@ -44,7 +45,7 @@ public class MapMain extends Application {
         appLauncher = true;
     }
 
-    //    Function to init the root view
+    // Function to init the root view
     public void initRootView() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -68,7 +69,7 @@ public class MapMain extends Application {
         }
     }
 
-    //    Function to show the map
+    // Function to show the map
     public void initMapLayout() {
         mapViewer = TileMapViewer.getInstance();
         mapViewer.loadMap("/Maps/testmap.map");
@@ -90,6 +91,7 @@ public class MapMain extends Application {
         rootLayout.setCenter(mapLayout);
     }
 
+    // The fading animation function
     public void fadeAnimation() {
         FadeTransition ft = new FadeTransition(Duration.millis(5000), rootLayout);
         ft.setFromValue(0);
@@ -98,5 +100,15 @@ public class MapMain extends Application {
         ft.setAutoReverse(true);
 
         ft.play();
+    }
+
+    private void initDialogBox()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText("Look, an Information Dialog");
+        alert.setContentText("I have a great message for you!");
+
+        alert.showAndWait();
     }
 }
