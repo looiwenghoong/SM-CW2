@@ -10,38 +10,85 @@ import javafx.scene.canvas.Canvas;
 
 public class TileMapViewer {
 
+    /**
+     * Initialize the TileMapViewer object based on singleton concept
+     */
     private static TileMapViewer mapViewer = null;
 
-    public static Cursor cursor;
+    /**
+     * Cursor variable used to init the cursor object
+     */
+    private static Cursor cursor;
 
-    public int numCols;
-    public int numRows;
+    /**
+    * Variables to init the number of column and row of the map that is used to draw the map
+    */
+    int numCols;
+    int numRows;
 
+    /**
+     * The map matrix used to store all the values from the map file
+     */
     private int[][] mapMatrix;
-    public int[][] tileType;
 
+    /**
+     * Array to store the tiletype to determine if the coordinate is occupied with obstacle or not
+     */
+    int[][] tileType;
+
+    /**
+     * Variable to store the images of the map and extract into the map matrix
+     */
     private Image tileset;
     private int numTilesAcross;
+
+    /**
+     * Default tilesize is 16
+     */
     private int tileSize = 16;
 
-    public static Image items;
-    private boolean axeIsPlaced = false;
-    private boolean boatIsPlaced = false;
+
+
+    /**
+     * Variable to store the images such as axe and boat
+     */
+    static Image items;
+
+    /**
+     * Check if the axe and boat is placed
+     */
+    private boolean axeIsPlaced = true;
+    private boolean boatIsPlaced = true;
 
     private Image originalImage;
-    public Image newImage;
+    Image newImage;
 
-    public Canvas mainCanvas;
-    public Canvas currentCanvas;
+    /**
+     * Variable mainCanvas is to update the whole map
+     * All the component will be drawn on the main canvas
+     */
+    Canvas mainCanvas;
 
-    /*
-    * Variables for setting the items, boat and axe
-    */
-    private int boatRow = -1;
-    private int boatCol = -1;
-    private int axeRow = -1;
-    private int axeCol = -1;
+    /**
+     * Variable currentCanvas is to show the current part of map
+     * The changes to the map such as the movement of the cursor will be updated to the current canvas to avoid conflict
+     * with the main canvas
+     */
+    Canvas currentCanvas;
 
+    /**
+     * Variables for setting the items, boat and axe
+     * This is the default value of the boat and axe coordinates
+     * If the user does not want to change the default position, this will be the default position to display on the map
+     */
+    private int boatRow = 12;
+    private int boatCol = 4;
+    private int axeRow = 26;
+    private int axeCol = 37;
+
+    /**
+     * Getter functions to get the row and column for the axe and boat
+     */
     public int getBoatRow() {
         return boatRow;
     }
@@ -55,9 +102,13 @@ public class TileMapViewer {
         return axeCol;
     }
 
-    public TileMapViewer(){}
+    // Empty constructor of the TileMapViewer class
+    private TileMapViewer(){}
 
-    public static TileMapViewer getInstance()
+    /**
+     * The getInstance function that is used to create an instance based on singleton concept
+     */
+    static TileMapViewer getInstance()
     {
         if(mapViewer == null)
         {
@@ -65,11 +116,11 @@ public class TileMapViewer {
         }
         return mapViewer;
     }
-    /*
+    /**
     * Function to load the map file with matrices
     * Creates a matrix to store all the values in the map file
     */
-    public void loadMap(String mapFile)
+    void loadMap(String mapFile)
     {
         try
         {
@@ -93,11 +144,11 @@ public class TileMapViewer {
         }
     }
 
-    /*
+    /**
     * Function to load the images of the map and items
     * The images of the map is created and stored in the variable for drawing
     */
-    public void loadImages(String tilesImage, String itemsImage)
+    void loadImages(String tilesImage, String itemsImage)
     {
         try
         {
@@ -111,7 +162,9 @@ public class TileMapViewer {
         }
     }
 
-    // Function that initialise the canvas of the map
+    /**
+     * Function that initialise the canvas of the map
+     */
     void initMapCanvas()
     {
         mainCanvas = new Canvas(640, 640);
@@ -136,9 +189,11 @@ public class TileMapViewer {
                 int R = rowCol / numTilesAcross;
                 int C = rowCol % numTilesAcross;
 
-                // if else statement to determine whether to load the tileset image from row 1 or row 2
-                // tileset row 1 contains no obstacle
-                // tileset row 2 contains obstacle
+                /**
+                 * if else statement to determine whether to load the tileset image from row 1 or row 2
+                 *                  tileset row 1 contains no obstacle
+                 *                  tileset row 2 contains obstacle
+                 */
                 if(R == 0)
                 {
                     mainCanvas.getGraphicsContext2D().drawImage(
@@ -164,6 +219,21 @@ public class TileMapViewer {
 
         originalImage = mainCanvas.snapshot(null, null);
         drawCursorToMain();
+        int axe = 1;
+        currentCanvas.getGraphicsContext2D().drawImage(
+                items,
+                axe * tileSize, tileSize, tileSize, tileSize,
+                axeCol * tileSize,
+                axeRow * tileSize,
+                tileSize, tileSize);
+
+        int boat = 0;
+        currentCanvas.getGraphicsContext2D().drawImage(
+                items,
+                boat * tileSize, tileSize, tileSize, tileSize,
+                boatCol * tileSize,
+                boatRow * tileSize,
+                tileSize, tileSize);
         currentCanvas.getGraphicsContext2D().drawImage(
                 cursor.imageArray[cursor.currentCursor], 0, 0, tileSize, tileSize,
                 cursor.CursorCol * tileSize, cursor.CursorRow * tileSize,
@@ -171,7 +241,9 @@ public class TileMapViewer {
         newImage = mainCanvas.snapshot(null, null);
     }
 
-    // Function to replace the tile back to the original tile after the cursor is moved
+    /**
+     * Function to replace the tile back to the original tile after the cursor is moved
+     */
     void replaceToOriginal(int col, int row)
     {
         mainCanvas.getGraphicsContext2D().drawImage(
@@ -184,7 +256,10 @@ public class TileMapViewer {
                 tileSize, tileSize);
     }
 
-    public void updateCurrentCanvas()
+    /**
+     * Function to update the current canvas
+     */
+    void updateCurrentCanvas()
     {
         currentCanvas.getGraphicsContext2D().drawImage(
                 newImage, 0, 0,
@@ -193,8 +268,10 @@ public class TileMapViewer {
     }
 
 
-    // Function to draw the cursor
-    public void drawCursorToMain()
+    /**
+     * Function to draw the cursor
+     */
+    void drawCursorToMain()
     {
         mainCanvas.getGraphicsContext2D().drawImage(
                 cursor.imageArray[cursor.currentCursor], 0, 0, tileSize, tileSize,
@@ -202,47 +279,32 @@ public class TileMapViewer {
                 cursor.CursorRow * tileSize, tileSize, tileSize);
     }
 
-    public void drawitem()
+    /**
+     * Function to draw the item, this function will constantly draw the items whenever the key event is triggered
+     */
+    void drawitem()
     {
-        if(axeIsPlaced)
-        {
-            int axe = 1;
-            mainCanvas.getGraphicsContext2D().drawImage(
-                    items,
-                    axe * tileSize, tileSize, tileSize, tileSize,
-                    axeCol * tileSize,
-                    axeRow * tileSize,
-                    tileSize, tileSize);
-        }
-        if (boatIsPlaced)
-        {
-            int boat = 0;
-            mainCanvas.getGraphicsContext2D().drawImage(
-                    items,
-                    boat * tileSize, tileSize, tileSize, tileSize,
-                    boatCol * tileSize,
-                    boatRow * tileSize,
-                    tileSize, tileSize);
-        }
+        int axe = 1;
+        mainCanvas.getGraphicsContext2D().drawImage(
+                items,
+                axe * tileSize, tileSize, tileSize, tileSize,
+                axeCol * tileSize,
+                axeRow * tileSize,
+                tileSize, tileSize);
+        int boat = 0;
+        mainCanvas.getGraphicsContext2D().drawImage(
+                items,
+                boat * tileSize, tileSize, tileSize, tileSize,
+                boatCol * tileSize,
+                boatRow * tileSize,
+                tileSize, tileSize);
     }
 
-    private int checkItemPlaced(boolean itemCondition, int itemRow, int itemCol)
-    {
-        // If the item is not placed yet
-        if(itemCondition)
-        {
-            replaceToOriginal(itemCol, itemRow);
-            tileType[itemRow][itemCol] = 0;
-            return 2;
-        }
-        // If the item position is updated
-        else
-        {
-            return 0;
-        }
-    }
-
-    public int setItem(int itemType)
+    /**
+     * Function to place the axe and the boat
+     * @param itemType
+     */
+    public void setItem(int itemType)
     {
         int handleType = 0;
         Cursor.cursorColour = false;
@@ -251,15 +313,17 @@ public class TileMapViewer {
         replaceToOriginal(cursor.CursorCol, cursor.CursorRow);
 
         // Invalid Position of placing the item
-        if (tileType[cursor.CursorRow][cursor.CursorCol] == 1) {
-            handleType = 1;
-        }
-        // return type: Axe put successful
-        else {
+        if (tileType[cursor.CursorRow][cursor.CursorCol] != 1)
+        {
             switch (itemType)
             {
                 case 1:
-                    handleType = checkItemPlaced(axeIsPlaced, axeRow, axeCol);
+                    if (axeIsPlaced) {
+                        replaceToOriginal(axeCol, axeRow);
+
+                        tileType[axeRow][axeCol] = 0;
+                    }
+
                     axeIsPlaced = true;
                     tileType[cursor.CursorRow][cursor.CursorCol] = 1;
 
@@ -267,7 +331,12 @@ public class TileMapViewer {
                     axeCol = cursor.CursorCol;
                     break;
                 case 2:
-                    handleType = checkItemPlaced(boatIsPlaced, boatRow, boatCol);
+                    if (boatIsPlaced) {
+                        replaceToOriginal(boatCol, boatRow);
+
+                        tileType[boatRow][boatCol] = 0;
+                    }
+
                     boatIsPlaced = true;
                     tileType[cursor.CursorRow][cursor.CursorCol] = 1;
 
@@ -282,7 +351,5 @@ public class TileMapViewer {
 
         newImage = mainCanvas.snapshot(null, null);
         updateCurrentCanvas();
-
-        return handleType;
     }
 }

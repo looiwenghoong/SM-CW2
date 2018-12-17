@@ -7,19 +7,31 @@ import javafx.scene.image.Image;
 
 public class Cursor {
 
+    // TileMapViewer object that is create to get the TileMapViewer instance to perform operations on the cursor
     private static TileMapViewer mapViewer;
 
+    // Initialize the cursor object based on singleton concept
     private static Cursor cursor = null;
 
+    /**
+     * The cursor colour variable used to determine the status of the colour,
+     * By default it will be false meaning default cursor colour
+     * When the cursor colour is true meaning perform operation to change the colour of the cursor
+     */
     public static boolean cursorColour = false;
+
     // Init the image array
     public Image[] imageArray;
 
-    // variable to decide which cursor to be used
-    // Currently init the cursor to use the normal colour cursor
+    /**
+     * Variable to decide which cursor to be used
+     * Currently init the cursor to use the normal colour cursor
+     */
     public int currentCursor = 2;
 
-    // Initialise the coordinate of the cursor
+    /**
+     * Initialise the coordinate of the cursor
+     */
     public static int CursorCol;
     public static int CursorRow;
 
@@ -40,6 +52,9 @@ public class Cursor {
         CursorRow = 17;
     }
 
+    /**
+     * function to get the cursor instance based on singleton concept
+     */
     public static Cursor getInstance()
     {
         if(cursor == null) {
@@ -48,6 +63,9 @@ public class Cursor {
         return cursor;
     }
 
+    /**
+     * Function to draw and update the cursor due to duplication in the operation function which is the cursorMovement function
+     */
     private static void cursorMovementOpt()
     {
         mapViewer.drawitem();
@@ -56,6 +74,10 @@ public class Cursor {
         mapViewer.updateCurrentCanvas();
     }
 
+    /**
+     * Function to move the direction of the cursor based on the parameter given
+     * @param direction
+     */
     public static void cursorMovement(int direction)
     {
         switch (direction)
@@ -105,6 +127,9 @@ public class Cursor {
         }
     }
 
+    /**
+     * Change the colour of the cursor based on conditions
+     */
     public static void changeCursorColour()
     {
         if(cursorColour)
@@ -117,6 +142,9 @@ public class Cursor {
         }
     }
 
+    /**
+     * turn on the cursor colour when pressing the buttons to place the item to show the validity of the position
+     */
     public static void turnOnCursorColour()
     {
         cursorColour = true;
